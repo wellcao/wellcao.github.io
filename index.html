@@ -236,7 +236,8 @@
                                 </div>
 
                                 <div class="post-body" itemprop="articleBody">
-                                    <h2 id="q7"><a href="#ajax" class="headerlink" title="ajax"></a>7、Android ClassLoader机制？</h2>
+                                    <h2 id="q7"><a href="#ajax" class="headerlink" title="ajax"></a>7、Android
+                                        ClassLoader机制？</h2>
                                     <h4>AA公司、BB公司</h4>
                                     <a href="https://www.jianshu.com/p/89c9c3af3ff9" target="_blank">https://www.jianshu.com/p/89c9c3af3ff9</a>
                                 </div>
@@ -244,7 +245,90 @@
                                 <div class="post-body" itemprop="articleBody">
                                     <h2 id="q8"><a href="#ajax" class="headerlink" title="ajax"></a>8、Java 垃圾回收机制？</h2>
                                     <h4>AA公司、BB公司</h4>
-                                    <a href="https://blog.csdn.net/justloveyou_/article/details/71216049" target="_blank">https://blog.csdn.net/justloveyou_/article/details/71216049</a>
+                                    <a href="https://blog.csdn.net/justloveyou_/article/details/71216049"
+                                       target="_blank">https://blog.csdn.net/justloveyou_/article/details/71216049</a>
+                                </div>
+
+                                <div class="post-body" itemprop="articleBody">
+                                    <h2 id="q9"><a href="#ajax" class="headerlink" title="ajax"></a>10、LinkedHashMap？
+                                    </h2>
+                                    <h4>AA公司、BB公司</h4>
+                                    <h5>LinkedHashMap 拥有 HashMap 的所有特性，它比 HashMap
+                                        多维护了一个双向链表，因此可以按照插入的顺序从头部或者从尾部迭代，是有序的，不过因为比 HashMap 多维护了一个双向链表，它的内存相比而言要比
+                                        HashMap 大，并且性能会差一些，但是如果需要考虑到元素插入的顺序的话， LinkedHashMap 不失为一种好的选择</h5>
+                                </div>
+
+                                <div class="post-body" itemprop="articleBody">
+                                    <h2 id="q10"><a href="#ajax" class="headerlink" title="ajax"></a>10、HashMap的index算法？
+                                    </h2>
+                                    <h4>AA公司、BB公司</h4>
+                                    <a href="https://blog.csdn.net/justloveyou_/article/details/71216049"
+                                       target="_blank">https://blog.csdn.net/justloveyou_/article/details/71216049</a>
+                                </div>
+
+                                <div class="post-body" itemprop="articleBody">
+                                    <h2 id="q11"><a href="#ajax" class="headerlink" title="ajax"></a>11、Android
+                                        ThreadLocal工作原理？</h2>
+                                    <h4>AA公司、BB公司</h4>
+                                    <p>
+                                        ThreadLocal是一个线程内部数据存储类，它可以在指定线程中存储数据，存储后，在指定的线程中获取数据，而其它线程无法获取数据。Android
+                                        的looper中使用到了ThreadLocal。
+                                    </p>
+                                    <p>
+                                        Handler在线程中通过Looper挂钩，在Ui线程中创建默认使用MainLooper，而子线程的创建通过Looper.prepare()和Looper.loop()来设置，一个线程对应一个Looper。
+                                    </p>
+                                    <p>
+                                        子线程中创建Looper代码如下
+                                    </p>
+
+                                    <pre><code>
+                                            private void initHandler(){
+                                                mUiHandler = new UiHandler();
+                                                ThreadPoolManager.getInstance().execute(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    Looper.prepare();//Looper初始化
+                                                    mWorkHandler = new WorkHandler(Looper.myLooper());
+                                                    mWorkHandler.sendEmptyMessageDelayed(MSG_BIND_SERVICE,2000);
+                                                    Looper.loop();//死循环
+                                                }
+                                            });
+                                        }
+
+                                        protected void onCreate(Bundle savedInstanceState){
+                                            ... ...
+                                            initHandler();
+                                        }
+                                    </code></pre>
+                                    <p>
+                                        HandlerThread的作用和使用：
+                                    </p>
+                                    <pre><code>
+                                        class MyThread extends Thread {
+                                            public Looper myThreadLooper;
+                                            @Override
+                                            public void run() {
+                                                super.run();
+                                                Looper.prepare();
+                                                myThreadLooper = Looper.myLooper();
+                                                Looper.loop();
+                                            }
+                                        }
+
+                                        protected void onCreate(Bundle savedInstanceState){
+                                            //创建子线程并启动
+                                            final MyThread myThread = new MyThread();
+                                            myThread.start();
+                                            //将子线程的Looper对象赋给myHandler
+                                            myHandler = new Handler(myThread.myThreadLooper) {
+                                                @Override
+                                                public void handleMessage(Message msg) {
+                                                    super.handleMessage(msg);
+                                                }
+                                            };
+                                            myHandler.sendEmptyMessage(2);
+                                        }
+                                    </code></pre>
                                 </div>
                             </div>
                         </article>
