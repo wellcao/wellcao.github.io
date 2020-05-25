@@ -285,52 +285,52 @@
                                     </p>
 
                                     <pre><code>
-                                        private void initHandler(){
-                                                mUiHandler = new UiHandler();
-                                                ThreadPoolManager.getInstance().execute(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    Looper.prepare();//Looper初始化
-                                                    mWorkHandler = new WorkHandler(Looper.myLooper());
-                                                    mWorkHandler.sendEmptyMessageDelayed(MSG_BIND_SERVICE,2000);
-                                                    Looper.loop();//死循环
-                                                }
-                                            });
-                                        }
+private void initHandler(){
+    mUiHandler = new UiHandler();
+    ThreadPoolManager.getInstance().execute(new Runnable() {
+        @Override
+        public void run() {
+            Looper.prepare();//Looper初始化
+            mWorkHandler = new WorkHandler(Looper.myLooper());
+            mWorkHandler.sendEmptyMessageDelayed(MSG_BIND_SERVICE,2000);
+            Looper.loop();//死循环
+        }
+    });
+}
 
-                                        protected void onCreate(Bundle savedInstanceState){
-                                            ... ...
-                                            initHandler();
-                                        }
+protected void onCreate(Bundle savedInstanceState){
+    ... ...
+    initHandler();
+}
                                     </code></pre>
                                     <p>
                                         HandlerThread的作用和使用：
                                     </p>
                                     <pre><code>
-                                        class MyThread extends Thread {
-                                            public Looper myThreadLooper;
-                                            @Override
-                                            public void run() {
-                                                super.run();
-                                                Looper.prepare();
-                                                myThreadLooper = Looper.myLooper();
-                                                Looper.loop();
-                                            }
-                                        }
+class MyThread extends Thread {
+    public Looper myThreadLooper;
+    @Override
+    public void run() {
+        super.run();
+        Looper.prepare();
+        myThreadLooper = Looper.myLooper();
+        Looper.loop();
+    }
+}
 
-                                        protected void onCreate(Bundle savedInstanceState){
-                                            //创建子线程并启动
-                                            final MyThread myThread = new MyThread();
-                                            myThread.start();
-                                            //将子线程的Looper对象赋给myHandler
-                                            myHandler = new Handler(myThread.myThreadLooper) {
-                                                @Override
-                                                public void handleMessage(Message msg) {
-                                                    super.handleMessage(msg);
-                                                }
-                                            };
-                                            myHandler.sendEmptyMessage(2);
-                                        }
+protected void onCreate(Bundle savedInstanceState){
+    //创建子线程并启动
+    final MyThread myThread = new MyThread();
+    myThread.start();
+    //将子线程的Looper对象赋给myHandler
+    myHandler = new Handler(myThread.myThreadLooper) {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+    myHandler.sendEmptyMessage(2);
+}
                                     </code></pre>
                                     <p>
                                         在上述代码中涉及到两个线程：UI线程和一个子线程；在UI线程中试图将子线程的Looper对象赋给Handler对象，在子线程运行的时候获取自己的Looper对象。
@@ -338,7 +338,7 @@
                                     <p>
                                         上述代码运行的时候会报如下错误：
                                     </p>
-                                    <pre><code>{
+                                    <pre><code>
 Caused by: java.lang.NullPointerException: Attempt to read from field 'android.os.MessageQueue android.os.Looper.mQueue' on a null object reference
 at android.os.Handler.init(Handler.java:236)
 at android.os.Handler.init(Handler.java:140)
