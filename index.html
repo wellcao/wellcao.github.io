@@ -282,7 +282,7 @@
                                     </p>
 
                                     <pre><code>
-                                            private void initHandler(){
+                                        private void initHandler(){
                                                 mUiHandler = new UiHandler();
                                                 ThreadPoolManager.getInstance().execute(new Runnable() {
                                                 @Override
@@ -329,11 +329,102 @@
                                             myHandler.sendEmptyMessage(2);
                                         }
                                     </code></pre>
+                                    <p>
+                                        在上述代码中涉及到两个线程：UI线程和一个子线程；在UI线程中试图将子线程的Looper对象赋给Handler对象，在子线程运行的时候获取自己的Looper对象。
+                                    </p>
+                                    <p>
+                                        上述代码运行的时候会报如下错误：
+                                    </p>
+                                    <pre><code>{
+Caused by: java.lang.NullPointerException: Attempt to read from field 'android.os.MessageQueue android.os.Looper.mQueue' on a null object reference
+at android.os.Handler.init(Handler.java:236)
+at android.os.Handler.init(Handler.java:140)
+at com.cloudecg.jgc.test.androidrestudy.MainActivity$1.init(MainActivity.java:46)
+at com.cloudecg.jgc.test.androidrestudy.MainActivity.onCreate(MainActivity.java:46)
+at android.app.Activity.performCreate(Activity.java:6910)
+at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1123)
+                                    </code>
+                                    </pre>
+                                    <p>
+                                        即Looper对象为空。
+                                    </p>
+                                    <p>
+                                        产生上述错误的原因在于多线程并发，当UI线程执行到赋值操作的时候，子线程中的Looper对象还没有创建成功
+                                    </p>
+                                    <p>
+                                        使用HandlerThread可以很方便的避免上述多线程并发带来的问题
+                                    </p>
+                                    <p>
+                                        将上述代码改为HandlerThread的方式，如下：
+                                    </p>
+                                    <pre><code>
+private HandlerThread mThread;
+
+    protected void onCreate(Bundle savedInstaceState){
+        //创建子线程并启动
+        myThread = new HandlerThread("MyThreadHandler");
+        myThread.start();
+        //将子线程的Looper对象赋给myHandler
+        myHandler = new Handler(myThread.getLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Log.e(TAG, "msg what:" + msg.what);
+            }
+        };
+        myHandler.sendEmptyMessage(2);
+    }
+                                    </code></pre>
+                                    <p>
+                                        将Thread改为HandlerThread之后就不会产生之前的多线程并发问题了。
+                                    </p>
+                                    <p>
+                                        原因是在HandlerThread的getLooper()方法中已经做了相关处理，查看源代码如下：
+                                    </p>
+                                    <pre><code>
+public Looper getLooper() {
+    if (!isAlive()) {
+        return null;
+    }
+
+    // If the thread has been started, wait until the looper has been created.
+    synchronized (this) {
+        while (isAlive() && mLooper == null) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+            }
+        }
+    }
+    return mLooper;
+}
+                                    </code></pre>
+                                    <p>
+                                        在HandlerThread中如果Looper对象没有创建成功，则当前线程一直处于等待状态。
+                                    </p>
+                                    <p>
+                                        HandlerThread的唤醒源代码如下：
+                                    </p>
+                                    <pre><code>
+public void run() {
+    mTid = Process.myTid();
+    Looper.prepare();
+    synchronized (this) {
+    mLooper = Looper.myLooper();
+    notifyAll();
+    }
+    Process.setThreadPriority(mPriority);
+    onLooperPrepared();
+    Looper.loop();
+    mTid = -1;
+}
+                                    </code></pre>
+                                    <p>
+                                        在HandlerThread的run方法中如果Looper对象创建成功，则唤醒所有等待线程。
+                                    </p>
                                 </div>
                             </div>
                         </article>
-
-
                     </section>
 
 
