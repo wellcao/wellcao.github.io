@@ -284,26 +284,74 @@ public static int[] qsort(int arr[],int start,int end) {
                                 </div>
 
                                 <div class="post-body" itemprop="articleBody">
-                                    <h2 id="q3"><a href="#ajax" class="headerlink" title="ajax"></a>13、Okhttp连接池复用？</h2>
+                                    <h2 id="q3"><a href="#ajax" class="headerlink" title="ajax"></a>14、Okhttp连接池复用？</h2>
                                     <h4>最右</h4>
                                     <a href="https://blog.csdn.net/gaowenhui2008/article/details/55044704"
                                        target="_blank">https://blog.csdn.net/tangjiean/article/details/51729371</a>
                                 </div>
 
                                 <div class="post-body" itemprop="articleBody">
-                                    <h2 id="q4"><a href="#ajax" class="headerlink" title="ajax"></a>13、https加密？</h2>
+                                    <h2 id="q4"><a href="#ajax" class="headerlink" title="ajax"></a>15、https加密？</h2>
                                     <h4>最右</h4>
                                     <a href="https://blog.csdn.net/gaowenhui2008/article/details/55044704"
                                        target="_blank">https://blog.csdn.net/Yang_yangyang/article/details/79702583</a>
+                                </div>
+
+                                <div class="post-body" itemprop="articleBody">
+                                    <h2 id="q5"><a href="#ajax" class="headerlink" title="ajax"></a>16、okhttp连接复用？</h2>
+                                    <h4>XX</h4>
+                                    <p>
+                                        Keep-Alive机制，当一次http请求完成时，tcp不会立即释放，如果有新的http请求，并且host和上次一样，就会复用tcp连接，省去重新连接的过程
+                                    </p>
+                                    <pre>
+                                        <code>
+for 所有连接{
+    1、检查连接是否空闲
+    2、空闲数量+1
+    3、标记空闲最久的连接
+}
+
+if 空闲时间大于keep-alive时间 或 空闲连接大于5个
+    移除空闲最久的连接，最后return 0，马上触发下一次cleanup
+else if 有空闲连接
+    return 空闲最久连接剩余到期时间
+else if 有在用连接
+    return keep-alive
+else 没有连接
+    return -1 跳出清理线程
+
+return 0
+                                        </code>
+                                    </pre>
+                                    <p>keep-alive时间在ConnectionPool预设的时间是5分钟，最大空闲连接数量是5个，可以修改</p>
                                 </div>
 
                                 <footer class="post-footer">
                                     <div class="post-eof"></div>
                                 </footer>
                             </div>
+
+                            <div class="post-body" itemprop="articleBody">
+                                <h2 id="q17"><a href="#ajax" class="headerlink" title="ajax"></a>17、websocket和socket.io的区别？</h2>
+                                <h4>XX</h4>
+                                <p>
+                                    websocket同http一样是应用层协议，是一种双向通信协议，模拟socket，基于tcp。
+                                    socket不是一种协议，是为了方便使用tcp或udp抽象出来的一层位于传输层和应用层之间的一组接口，
+                                </p>
+                            </div>
+
+                            <div class="post-body" itemprop="articleBody">
+                                <h2 id="q18"><a href="#ajax" class="headerlink" title="ajax"></a>18、websocket和socket.io的区别？</h2>
+                                <h4>XX</h4>
+                                <p>
+                                    websocket同http一样是应用层协议，是一种双向通信协议，模拟socket，基于tcp。
+                                    socket不是一种协议，是为了方便使用tcp或udp抽象出来的一层位于传输层和应用层之间的一组接口，
+                                </p>
+                            </div>
+
                         </article>
 
-                    </section>
+                    </section>ERROR_LOG_PATH
                     <nav class="pagination">
                         <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a
                             class="page-number" href="/">1</a><span class="page-number current">2</span><a
