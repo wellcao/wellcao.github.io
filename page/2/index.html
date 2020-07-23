@@ -353,6 +353,31 @@ return 0
                                 </p>
                             </div>
 
+                            <div class="post-body" itemprop="articleBody">
+                                <h2 id="q19"><a href="#ajax" class="headerlink" title="ajax"></a>19、判断对象是否存活 - 可达性分析算法（根搜索法）？</h2>
+                                <h4>XX</h4>
+                                <p>
+                                    可达性分析算法：从系列可称为"GC Roots"的对象为起点节点，从这些节点向下搜索，走过的路径成为引用链。当一个对象到GC-Roots没有任何引用链相连时，认为对象可回收。
+                                    可作为GC-Roots的对象有以下几种：
+
+                                    a. 虚拟机栈中的引用的对象。
+                                       我们创建一个对象，会在堆内存中开辟一块空间，同时将该空间的地址作为引用保存在虚拟机栈中。当对象的生命周期结束，将该引用从虚拟机栈中移除。因此当虚拟机栈中还有引用
+                                    时，认为该对象是有用的
+
+                                    b. 方法区中静态变量引用的对象
+                                       我们在类中定义了静态对象，也就是使用static修饰。由于线程是私有的，这
+                                    c. 方法区中常量引用的对象
+                                    d. 本地方法栈中引用的对象
+                                </p>
+                            </div>
+
+                            <div class="post-body" itemprop="articleBody">
+                                <h2 id="q20"><a href="#ajax" class="headerlink" title="ajax"></a>20、JVM内存模型？</h2>
+                                <h4>XX</h4>
+                                <a href="https://blog.csdn.net/justloveyou_/article/details/71189093"
+                                   target="_blank">https://blog.csdn.net/justloveyou_/article/details/71189093</a>
+                            </div>
+
                         </article>
 
 
