@@ -224,7 +224,163 @@
                                     <meta itemprop="name" content="Sec-Communication">
                                 </span>
 
+                                <div class="post-body" itemprop="articleBody">
+                                    <h2 id="q11"><a href="#ajax" class="headerlink" title="ajax"></a>11、Android
+                                        ThreadLocal工作原理？</h2>
+                                    <h4>AA公司、BB公司</h4>
+                                    <p>
+                                        ThreadLocal是一个线程内部数据存储类，它可以在指定线程中存储数据，存储后，在指定的线程中获取数据，而其它线程无法获取数据。Android
+                                        的looper中使用到了ThreadLocal。
+                                    </p>
+                                    <p>
+                                        Handler在线程中通过Looper挂钩，在Ui线程中创建默认使用MainLooper，而子线程的创建通过Looper.prepare()和Looper.loop()来设置，一个线程对应一个Looper。
+                                    </p>
+                                    <p>
+                                        子线程中创建Looper代码如下
+                                    </p>
 
+                                    <pre><code>
+private void initHandler(){
+    mUiHandler = new UiHandler();
+    ThreadPoolManager.getInstance().execute(new Runnable() {
+        @Override
+        public void run() {
+            Looper.prepare();//Looper初始化
+            mWorkHandler = new WorkHandler(Looper.myLooper());
+            mWorkHandler.sendEmptyMessageDelayed(MSG_BIND_SERVICE,2000);
+            Looper.loop();//死循环
+        }
+    });
+}
+
+protected void onCreate(Bundle savedInstanceState){
+    ... ...
+    initHandler();
+}
+                                    </code></pre>
+                                    <p>
+                                        HandlerThread的作用和使用：
+                                    </p>
+                                    <pre><code>
+class MyThread extends Thread {
+    public Looper myThreadLooper;
+    @Override
+    public void run() {
+        super.run();
+        Looper.prepare();
+        myThreadLooper = Looper.myLooper();
+        Looper.loop();
+    }
+}
+
+protected void onCreate(Bundle savedInstanceState){
+    //创建子线程并启动
+    final MyThread myThread = new MyThread();
+    myThread.start();
+    //将子线程的Looper对象赋给myHandler
+    myHandler = new Handler(myThread.myThreadLooper) {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+    myHandler.sendEmptyMessage(2);
+}
+                                    </code></pre>
+                                    <p>
+                                        在上述代码中涉及到两个线程：UI线程和一个子线程；在UI线程中试图将子线程的Looper对象赋给Handler对象，在子线程运行的时候获取自己的Looper对象。
+                                    </p>
+                                    <p>
+                                        上述代码运行的时候会报如下错误：
+                                    </p>
+                                    <pre><code>
+Caused by: java.lang.NullPointerException: Attempt to read from field 'android.os.MessageQueue android.os.Looper.mQueue' on a null object reference
+at android.os.Handler.init(Handler.java:236)
+at android.os.Handler.init(Handler.java:140)
+at com.cloudecg.jgc.test.androidrestudy.MainActivity$1.init(MainActivity.java:46)
+at com.cloudecg.jgc.test.androidrestudy.MainActivity.onCreate(MainActivity.java:46)
+at android.app.Activity.performCreate(Activity.java:6910)
+at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1123)
+                                    </code>
+                                    </pre>
+                                    <p>
+                                        即Looper对象为空。
+                                    </p>
+                                    <p>
+                                        产生上述错误的原因在于多线程并发，当UI线程执行到赋值操作的时候，子线程中的Looper对象还没有创建成功
+                                    </p>
+                                    <p>
+                                        使用HandlerThread可以很方便的避免上述多线程并发带来的问题
+                                    </p>
+                                    <p>
+                                        将上述代码改为HandlerThread的方式，如下：
+                                    </p>
+                                    <pre><code>
+private HandlerThread mThread;
+
+    protected void onCreate(Bundle savedInstaceState){
+        //创建子线程并启动
+        myThread = new HandlerThread("MyThreadHandler");
+        myThread.start();
+        //将子线程的Looper对象赋给myHandler
+        myHandler = new Handler(myThread.getLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Log.e(TAG, "msg what:" + msg.what);
+            }
+        };
+        myHandler.sendEmptyMessage(2);
+    }
+                                    </code></pre>
+                                    <p>
+                                        将Thread改为HandlerThread之后就不会产生之前的多线程并发问题了。
+                                    </p>
+                                    <p>
+                                        原因是在HandlerThread的getLooper()方法中已经做了相关处理，查看源代码如下：
+                                    </p>
+                                    <pre><code>
+public Looper getLooper() {
+    if (!isAlive()) {
+        return null;
+    }
+
+    // If the thread has been started, wait until the looper has been created.
+    synchronized (this) {
+        while (isAlive() && mLooper == null) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+            }
+        }
+    }
+    return mLooper;
+}
+                                    </code></pre>
+                                    <p>
+                                        在HandlerThread中如果Looper对象没有创建成功，则当前线程一直处于等待状态。
+                                    </p>
+                                    <p>
+                                        HandlerThread的唤醒源代码如下：
+                                    </p>
+                                    <pre><code>
+public void run() {
+    mTid = Process.myTid();
+    Looper.prepare();
+    synchronized (this) {
+    mLooper = Looper.myLooper();
+    notifyAll();
+    }
+    Process.setThreadPriority(mPriority);
+    onLooperPrepared();
+    Looper.loop();
+    mTid = -1;
+}
+                                    </code></pre>
+                                    <p>
+                                        在HandlerThread的run方法中如果Looper对象创建成功，则唤醒所有等待线程。
+                                    </p>
+                                </div>
                                 <div class="post-body" itemprop="articleBody">
                                     <h2 id="q1"><a href="#ajax" class="headerlink" title="ajax"></a>12、quick sort？
                                     </h2>
