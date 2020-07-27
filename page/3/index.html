@@ -202,6 +202,7 @@
                     <section id="posts" class="posts-expand">
 
                         <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
                             <div class="post-body" itemprop="articleBody">
                                 <h2 id="q21"><a href="#ajax" class="headerlink" title="ajax"></a>21、android线程池？</h2>
                                 <h4>XX</h4>
@@ -220,6 +221,30 @@
                                     ④. SingleThreadPool(单个核线的fixed)
 
                                     ⑥. ScheduledThreadPool(定时延时执行)
+                                </p>
+                            </div>
+
+                            <div class="post-body" itemprop="articleBody">
+                                <h2 id="q22"><a href="#ajax" class="headerlink" title="ajax"></a>22、https加密过程？</h2>
+                                <h4>XX</h4>
+                                <p>
+                                    ①. 认证服务器
+                                       主流服务器会内置受信任的CA机构列表，服务器返回CA证书，客户端从证书中取出公钥
+                                    ②. 协商会话秘钥
+                                       利用公钥与服务器进行通信，协商出加密传输数据的秘钥，这个秘钥是随机生成的
+                                    ③. 加密传输
+                                       数据传输用秘钥加密
+                                </p>
+                            </div>
+
+                            <div class="post-body" itemprop="articleBody">
+                                <h2 id="q23"><a href="#ajax" class="headerlink" title="ajax"></a>23、在子线程Handler时，怎么保证Looper初始化完成了？Handler能发送message到messageQueue的队首吗？Handler发送消息怎么不让消息在handleMesage里面
+                                执行？</h2>
+                                <h4>XX</h4>
+                                <p>
+                                    使用HandlerThread代替Handler，在使用Looper时先判断是否初始化，如果为null，则阻塞等待，在HandlerThread的run()中等Looper初始化完成后唤醒执行。
+                                    可以放到队首。https://www.jianshu.com/p/2bef8455cd0f
+                                    回调处理的优先级，Message 的回调 > Handler 的回调 > handleMessage。
                                 </p>
                             </div>
                         </article>
