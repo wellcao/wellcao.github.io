@@ -239,6 +239,187 @@
                             </div>
                         </article>
 
+
+
+                        <article>
+                            <div>
+                                <pre>
+                                    <code>
+ public void dispatch(final Activity srcActivity, final Bundle bundle,
+                         final int requestCode, final int startIntentFlag) {
+        String startModuleString = (String) bundle
+                .getSerializable(ModuleData.EXTRAKEY_MODULE);
+        final Module startModule = JsonUtil.jsonToObject(startModuleString,
+                Module.class);
+        if (startModule == null || TextUtils.isEmpty(startModule.moduleName)) {
+            // 模块名为空，则不请求
+            if (mCallback != null) {
+                mCallback.onLost(mData);
+            }
+            return;
+        }
+        new StepTask(PLUGINTASKNAME) {
+            /**
+             * 需要下载的Module信息
+             */
+            private Module downloadModule = null;
+
+            /**
+             * 启动
+             */
+            @Override
+            protected boolean onStart() {
+                return true;
+            }
+
+            /**
+             * 结束
+             */
+            @Override
+            protected void onFinish() {
+                dismissProgress();
+            }
+
+            /**
+             * 步骤一：获取插件的完整信息
+             */
+            @Override
+            protected void onStep1Start() {
+                // 模块为插件，则启动
+                if (startModule.isPlugin()) {
+                    downloadModule = startModule;
+                    nextStep();
+                    finishStep();
+                    return;
+                }
+                //Fixme
+                // 以服务端接口查询的Module信息为准进行下载
+                new ModuleModel(srcActivity).getPluginModule(startModule.moduleName,
+                        new XueErSiResPonse<Module>() {
+
+                            @Override
+                            public boolean onStart() {
+                                return showNetProgress(null, null);
+                            }
+
+                            @Override
+                            public void onFail(NetError exception) {
+                                XESToastUtils.showToast(srcActivity, exception.getMsg());
+                            }
+
+                            @Override
+                            public void onCompleted() {
+                                finishStep();
+                            }
+
+                            public void onFinish() {
+                                finishStep();
+                            }
+
+                            @Override
+                            public void onSuccess(Module module) {
+                                if (module == null) {
+                                    return;
+                                }
+                                // 保存查询到的模块信息到缓存
+                                ModuleCache.saveQueryModule(module);
+                                // 查询到的模块信息是正确的插件信息，则以此为准进行下载
+                                if (module.isPlugin()) {
+                                    downloadModule = module;
+                                    nextStep();
+                                    return;
+                                }
+
+                                //查询到的模块信息不是插件，但是可以启动（是本地、插件、或浏览器模块）
+                                if (module.canStart()) {
+                                    ModuleHandler
+                                            .startForResult(srcActivity, module,
+                                                    requestCode, startIntentFlag);
+                                }
+                            }
+
+                        });
+            }
+
+            /**
+             * 步骤二：下载插件
+             */
+            @Override
+            protected void onStep2Start() {
+                if (downloadModule == null) {
+                    finishStep();
+                    return;
+                }
+
+                //如果是测试环境，并且手机文件存储一级目录中含有以该 模块名 命名的的插件apk,则加载测试插件，以方便开发
+                if (AppConfig.DEBUG) {
+                    String apkFilePath = findPluginFromLocalForDev(mSrcActivity, downloadModule.moduleName + ".apk");
+                    if (!TextUtils.isEmpty(apkFilePath)) {
+                        startDownloadedModule(srcActivity, apkFilePath,
+                                downloadModule, bundle, requestCode, startIntentFlag);
+                        finishStep();
+                        return;
+                    }
+                }
+
+                //检查本地是否已经有该版本插件
+                if (ModuleManager.isApkDownloaded(downloadModule)) {
+                    // 本地已经下载，直接打开
+                    String apkFilePath = ModuleManager
+                            .getModuleFilePath(downloadModule);
+                    startDownloadedModule(srcActivity, apkFilePath,
+                            downloadModule, bundle, requestCode, startIntentFlag);
+                    finishStep();
+                    return;
+                }
+
+                final NumberFormat fmt = NumberFormat.getPercentInstance();
+                fmt.setMaximumFractionDigits(1);
+                // 下载插件
+                ModuleManager.downLoadModule(srcActivity, downloadModule,
+                        new DownLoadResultHandler() {
+
+                            @Override
+                            protected boolean onStart() {
+
+                                return showNetProgress("下载中...", this);
+                            }
+
+                            @Override
+                            protected void onFinish() {
+                                finishStep();
+                            }
+
+                            protected void onSuccess(String apkFilePath,
+                                                     String message) {
+                                startDownloadedModule(srcActivity, apkFilePath,
+                                        downloadModule, bundle, requestCode, startIntentFlag);
+                            }
+
+                            @Override
+                            protected void onProgressChange(long currentLength, long totalLength) {
+                                if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                                    mProgressDialog.setMessage(fmt.format((float) currentLength / (float) totalLength));
+                                }
+                            }
+
+                            @Override
+                            protected void onFailure(int resultCode,
+                                                     String message) {
+                                XESToastUtils.showToast(srcActivity, message);
+                                UmsAgentManager.umsAgentCustomerBusiness(mSrcActivity, mSrcActivity.getResources().getString(R.string
+                                        .plugin_download_fail), UserBll.getInstance().getMyUserInfoEntity().getStuId());
+                            }
+                        });
+            }
+        }.execute();
+    }
+
+                                    </code>
+                                </pre>
+                            </div>
+                        </article>
+
                     </section>
 
 
@@ -318,7 +499,7 @@
                 <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-                <span class="author" itemprop="copyrightHolder">小猪佩奇</span>
+                <span class="author" itemprop="copyrightHolder">wellcao</span>
 
 
             </div>
