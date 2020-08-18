@@ -244,6 +244,7 @@
                             <div>
                                 <pre>
                                     <code>
+
  public void dispatch(final Activity srcActivity, final Bundle bundle,
                          final int requestCode, final int startIntentFlag) {
         String startModuleString = (String) bundle
@@ -418,6 +419,396 @@
                                 </pre>
                             </div>
                         </article>
+
+
+
+                        <article>
+                            <div>
+                                <pre>
+                                    <code>
+
+
+dependencies {
+
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //业务工程：business下面的工程，如果是jekins打包都用aar
+    if (System.getenv('isJenkins') == 'true') {
+        def propertyNames = bundleVersions.stringPropertyNames()
+        String build_feature = System.getenv('BUILD_FEATURE_MODULE')
+
+        //遍历所feature分支
+        String[] buildFatureModels
+        if (build_feature != null) {
+            buildFatureModels = build_feature.split(",")
+        }
+        Map<String, String> modelsMap = new HashMap<>()
+
+        if (buildFatureModels != null && buildFatureModels.length >= 1) {
+            for (int i = 0; i < buildFatureModels.length; i++) {
+                String modelValue = buildFatureModels[i]
+                if (modelValue != null) {
+                    String[] modelValueSplit = modelValue.split(":")
+                    modelsMap.put(modelValueSplit[0], modelValueSplit[1])
+                }
+            }
+        }
+
+        propertyNames.each {
+            def verstion = bundleVersions.getProperty(it)
+            if (System.getenv("BUILD_TYPE") == "Release") {
+                println "jenkins release  busines :${it}:${bundleVersions.getProperty(it)}"
+                if (verstion.endsWith("-SNAPSHOT")) {
+                    def indexof = verstion.lastIndexOf("-")
+                    def newVerstion = verstion.substring(0, indexof)
+                    println("SUB -SNAPSHOT " + newVerstion)
+                    implementation("com.xueersi.bundle:${it}:${newVerstion}") {
+                        changing = true
+                        transitive = false
+                    }
+                } else {
+                    implementation "com.xueersi.bundle:${it}:${bundleVersions.getProperty(it)}"
+                }
+
+            } else {
+                if (verstion.endsWith("-SNAPSHOT")) {
+                    def buildVerstion = bundleVersions.getProperty(it)
+                    def buildModuleName = it.toString()
+                    if (modelsMap.containsKey(buildModuleName)) {
+                        buildVerstion = modelsMap.get(buildModuleName) + "-SNAPSHOT"
+                    }
+                    println("fature_verstion :" + buildVerstion)
+                    implementation("com.xueersi.bundle:${it}:${buildVerstion}") {
+                        changing = true
+                        transitive = false
+                    }
+
+                } else {
+                    implementation "com.xueersi.bundle:${it}:${bundleVersions.getProperty(it)}"
+                }
+            }
+
+        }
+    } else {
+        def propertyNames = bundleVersions.stringPropertyNames();
+        //遍历项目中的子模块
+        rootProject.subprojects.each {
+
+            //遍历项目中的子模块
+            if ((it.path.split(':').size() > 2) && it.path.startsWith(":library:")) {
+                println("library: module name=" + it)
+                rootProject.ext.xeslibraries.put(it.project.name, 'project:' + it.project.name);
+
+            }
+
+            if ((it.path.split(':').size() > 1) && it.path.startsWith(":common")) {
+                println("common module name=" + it)
+                rootProject.ext.businesslibraries.put(it.project.name, 'project:' + it.project.name);
+            }
+
+
+            if ((it.path.split(':').size() > 2) && it.path.startsWith(":business-base:")) {
+                println("business-base module name=" + it)
+                rootProject.ext.businesslibraries.put(it.project.name, 'project:' + it.project.name);
+            }
+
+
+            if ((it.path.split(':').size() > 2) && it.path.startsWith(":business:")) {
+                println("business module name=" + it)
+                if (pluginBusinessOpenStatus.get(it.name) == true) {
+                    //此时处于插件状态，不打入
+                } else {
+                    implementation it
+                }
+                propertyNames.remove(it.name)
+            }
+
+        }
+
+        propertyNames.each {
+            println("business aar module name=" + it)
+            def verstion = bundleVersions.getProperty(it)
+            if (verstion.endsWith("-SNAPSHOT")) {
+                implementation("com.xueersi.bundle:${it}:${bundleVersions.getProperty(it)}") {
+                    changing = true
+                    transitive = false
+                }
+            } else {
+                implementation "com.xueersi.bundle:${it}:${bundleVersions.getProperty(it)}"
+            }
+        }
+    }
+
+//引入business-base
+    def businesslibraries = rootProject.ext.businesslibraries
+    businesslibraries.values().each {
+        /*      implementation(it) {
+              changing = true
+          }*/
+        println("businesslibraries name=:" + it)
+        rootProject.xrsImplementation(this.getProject(), it)
+    }
+
+//引入学而思基础库
+    def xeslibs = rootProject.ext.xeslibraries
+    xeslibs.values().each {
+        /*     implementation(it) {
+             changing = true
+             exclude group: 'com.squareup.picasso'
+         }*/
+        println("xeslibraries name=:" + it)
+        rootProject.xrsImplementation(this.getProject(), it)
+    }
+
+//引入第三方库
+    def thirdlibraries = rootProject.ext.thirdlibraries
+    thirdlibraries.values().each {
+        implementation(it) {
+            changing = true
+            exclude group: 'xmlpull', module: 'xmlpull'
+        }
+    }
+
+ /*   implementation("com.xes.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
+    annotationProcessor("com.xes.tinker:tinker-android-anno:${TINKER_VERSION}") {
+        changing = true
+    }
+    implementation("com.xes.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }*/
+
+}
+
+
+                                    </code>
+                                </pre>
+                            </div>
+                        </article>
+
+
+
+                        <article>
+                            <div>
+                                <pre>
+                                    <code>
+
+
+public class XesApplication extends BaseApplication {
+
+    {
+        AppConfig.DEBUG = BuildConfig.DEBUG;
+        AppConfig.APPLICATION_ID = BuildConfig.APPLICATION_ID;
+        AppConfig.APP_NO_UPDATE = BuildConfig.APP_NO_UPDATE;
+        AppConfig.XES_TINKER_ID = BuildConfig.XES_TINKER_ID;
+        UmsConstants.TINKER_ID = BuildConfig.XES_TINKER_ID;
+        Loger.setDebug(BuildConfig.DEBUG);
+        LoggerConfig.setEnable(BuildConfig.DEBUG);
+    }
+
+    @Override
+    public void onCreate() {
+//        Loger.d("XesApplication", "creat3");
+        super.onCreate();
+        long t = System.currentTimeMillis();
+//        Loger.d("XesApplication", "creat4");
+
+        if (isPushProcess) {
+            create = true;
+            return;
+        }
+
+
+
+        Context context = getApplicationContext();
+        // 获取当前包名
+        String packageName = context.getPackageName();
+        // 获取当前进程名
+        String processName = getProcessName(android.os.Process.myPid());
+        // 设置是否为上报进程
+        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(context);
+        strategy.setAppChannel(AppBll.getInstance().getAppChannel());  //设置渠道
+        strategy.setUploadProcess(processName == null || processName.equals(packageName));
+        /* Bugly SDK初始化
+         * 参数1：上下文对象
+         * 参数2：APPID，平台注册时得到,注意替换成你的appId
+         * 参数3：是否开启调试模式，调试模式下会输出'CrashReport'tag的日志
+         */
+        String bublyID = null;
+        if (AppConfig.DEBUG) {
+            bublyID = "test";//debug 模式
+        } else {
+            bublyID = "test";//release 模式
+        }
+        CrashReport.initCrashReport(getApplicationContext(), bublyID, AppConfig.DEBUG, strategy);
+        //CrashReport.setUserSceneTag(context, 90213);
+        CrashReport.putUserData(context, "appsubversion", AppConfig.XES_TINKER_ID);
+        CrashReport.setIsDevelopmentDevice(context, AppConfig.DEBUG);//在开发测试阶段，可以在初始化Bugly之前通过以下接口把调试设备设置成“开发设备”
+        if (UserBll.getInstance() != null && UserBll.getInstance().getMyUserInfoEntity() != null) {
+            CrashReport.setUserId(UserBll.getInstance().getMyUserInfoEntity().getStuId()); //该用户本次启动后的异常日志用户ID
+        }
+        //CrashReport.enableBugly(!AppConfig.DEBUG);
+
+        //注册登录成功的通知广播
+        IntentFilter filterIn = new IntentFilter(LogInBroadcast.LOGIN_ACTION);
+        registerReceiver(new LogInBroadcast(), filterIn);
+
+        //注册登出成功的通知广播
+        IntentFilter filterOut = new IntentFilter(LogOutBroadcast.LOGOUT_ACTION);
+        registerReceiver(new LogOutBroadcast(), filterOut);
+
+        if (BuildConfig.DEBUG && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
+
+        if (BuildConfig.DEBUG) {
+            //如果是调试模式则初始化Stetho数据库工具
+//            Stetho.initializeWithDefaults(this);
+        }
+
+        if (getPackageName().equals(processName)) {// 如果是播放器的进程，不进行绑定
+//            DownLoadEnter.initDownLoadModule(this);
+            ReflexCenter.invokeMethodWithParams("com.xueersi.parentsmeeting.modules.downLoad.DownLoadEnter",
+                    "initDownLoadModule",
+                    new Class[]{Context.class}, new Object[]{this});
+        }
+
+        if (BuildConfig.DEBUG) {
+            String HTTP_HOST = mShareDataManager.getString("DEBUG_HTTP_HOST", AppConfig.HTTP_HOST, ShareDataManager
+                    .SHAREDATA_NOT_CLEAR);
+            String CHAT_HOST = mShareDataManager.getString("DEBUG_CHAT_HOST", AppConfig.CHAT_HOST, ShareDataManager
+                    .SHAREDATA_NOT_CLEAR);
+            AppConfig.HTTP_HOST = HTTP_HOST;
+            AppConfig.CHAT_HOST = CHAT_HOST;
+        }
+        create = true;
+
+
+        //访问底部icon接口
+        AppBll.getInstance().checkFooterIconUpdate();
+
+        // 初始化AB测试相关的方法
+        ABTestManager.getIstance().getTestConfig(UserBll.getInstance().getMyUserInfoEntity().getEnstuId());
+        ABTestManager.getIstance().setStuId(UserBll.getInstance().getMyUserInfoEntity().getStuId());
+        boolean loadX5 = true;
+        if ((getPackageName() + ":ldnet").equals(processName) || (getPackageName() + ":download").equals(processName) || (getPackageName() + ":livedaemon").equals(processName)) {// 如果是推送的进程，不进行初始化数据
+            loadX5 = false;
+            logger.d("onCreate:processName=" + processName);
+        }
+        if (loadX5) {
+            QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
+
+                @Override
+                public void onViewInitFinished(boolean arg0) {
+                    // TODO Auto-generated method stub
+                    //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
+                    logger.d(" onViewInitFinished is " + arg0);
+                }
+
+                @Override
+                public void onCoreInitFinished() {
+                    // TODO Auto-generated method stub
+                }
+            };
+            //x5内核初始化接口
+            QbSdk.initX5Environment(getApplicationContext(), cb);
+        }
+        logger.i("init_________" + (System.currentTimeMillis() - t));
+        //获得用户ip和运营商
+        new IpAddressUtil(this);
+
+        // 下载英语听写模型文件
+        ReflexCenter.invokeMethodWithParams("com.xueersi.parentsmeeting.modules.endictation.helper.ModelDownloader", "intialize", new Class[]{Context.class}, new Object[]{this});
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(LoginActionEvent event) {
+
+        if (!event.isAlreadyLogin()) {
+            logger.i("=========logout:processName=" + processName);
+            //如果是登出
+            ReflexCenter.invokeMethod("com.xueersi.parentsmeeting.modules.answer.AnswerQuestionEnter",
+                    "gcAnswerManager");
+            ReflexCenter.invokeMethod("com.xueersi.parentsmeeting.modules.pschat.ChatEnter", "logoutClearChatData");
+            //ChatEnter.logoutClearChatData();
+            ReflexCenter.invokeMethod("com.xueersi.parentsmeeting.modules.personals.PersonalsEnter",
+                    "clearMyGoldCache");
+            refreshActivty();
+            if (("" + processName).contains("live")) {
+                logger.i("=========logout:exit");
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.exit(0);
+                    }
+                }, 800);
+            }
+        } else {
+            if ((getPackageName()).equals(processName)) {
+                AppBll.getInstance().getPatchInfo();
+            }
+        }
+    }
+
+    /**
+     * 清除所有的页面，并finish
+     */
+    public void refreshActivty() {
+        // 将关闭所有activity的代码移下来，防止过早关闭，屏幕会黑一下
+        logger.i("======finish mListActivity=" + mListActivity.size());
+        for (Activity activity : mListActivity) {
+            if (activity != null) {
+                logger.i("======finish activity=" + activity.getClass().getName());
+                if (activity instanceof BaseActivity) {
+                    if (activity instanceof LoginActivity) {
+                        continue;
+                    }
+                    ((BaseActivity) activity).finish(BaseActivity.KIEK_ACTIVITY);
+                }
+            }
+        }
+        mListActivity.clear();
+    }
+
+
+    /**
+     * 获取进程号对应的进程名
+     *
+     * @param pid 进程号
+     * @return 进程名
+     */
+    private static String getProcessName(int pid) {
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("/proc/" + pid + "/cmdline"));
+            String processName = reader.readLine();
+            if (!TextUtils.isEmpty(processName)) {
+                processName = processName.trim();
+            }
+            return processName;
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+}
+
+
+                                    </code>
+                                </pre>
+                            </div>
+                        </article>
+
 
                     </section>
 
