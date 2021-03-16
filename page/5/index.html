@@ -172,13 +172,37 @@
                 <div id="content" class="content">
                     <!--内容-->
                     <section id="posts" class="posts-expand">
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                         <div class="post-body" itemprop="articleBody">
                             <h2 id="q1"><a href="#ajax" class="headerlink" title="ajax"></a>1、java类型擦除？</h2>
                             <h4>AA公司、BB公司</h4>
-                            <h5>java在编译期间会将泛型类型擦除，生成的字节码文件是不包含这些信息的</h5>
+                            <p>
+                                java在编译期间会将泛型类型擦除，生成的字节码文件是不包含这些信息的。
+                                泛型类
+                                <pre><code>
+public abstract class AbstractIRecyclerAdapter<\\T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<\\VH> {
+    private List<\\T> infos = new ArrayList<>();
+    public void add(T info) {
+        if (infos == null) {
+            infos = new ArrayList<>();
+        }
+        infos.add(info);
+    }
+}
+                                </code></pre>
+                                泛型方法
+                                <pre><code>
+public abstract class BridgeActivity extends Activity {
+     protect <\\T extends View> T findViewById(int resId){
+          return (T)findViewById(resId);
+     }
+}
+                                </code></pre>
+                            </p>
                             <a href="https://www.cnblogs.com/wuqinglong/p/9456193.html" target="_blank">Java泛型类型擦除以及类型擦除带来的问题</a>
+                            <a href="https://blog.csdn.net/briblue/article/details/76736356" target="_blank">https://blog.csdn.net/briblue/article/details/76736356</a>
                         </div>
-
+                        </article>
                     </section>
                     <nav class="pagination">
                         <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a>
